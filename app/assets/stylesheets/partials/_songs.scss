@@ -1,0 +1,70 @@
+// For individual song pages and grid
+.song_wrapper {
+  padding-top: 50px;
+  a {
+    color: $dark-grey;
+  }
+}
+
+.song_player {
+  background: $darkest-grey;
+  margin-bottom: 20px;
+  overflow: hidden;
+  .embed_wrapper {
+    position: relative;
+    width: 60%;
+    float: left;
+    @media(max-width:$laptop) {
+      width: 100%;
+      float: none;
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+  .song_metadata {
+    color: $white;
+    width: 38%;
+    float: right;
+    padding: 2%;
+    font-size: .90em;
+    @media(max-width:$laptop) {
+      width: 100%;
+      float: none;
+    }
+    a {
+      color: $red;
+    }
+    ul { 
+      margin: 0 auto;
+      padding: 5% 0;
+      width: 100%;
+      text-align: center;
+      clear: both;
+      li {
+        list-style-type: none;
+        display: inline;
+        padding: 0 8%;
+        font-size: 2em;
+        a {
+          color: $dark-grey;
+        }
+        a:hover {
+          color: $red;
+        }
+      }
+    }
+    .song_title {
+      font-family: $heading-font-family;
+      font-size: 1.2em;
+      line-height: 1.3em;
+      border-bottom: 1px solid $lightest-grey; 
+      padding: 10px 0;
+      margin-bottom: 20px;
+    }
+    .song_description {
+     margin-bottom: 10px;
+   }
+  }
+}

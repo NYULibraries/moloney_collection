@@ -1,0 +1,17 @@
+$red: #ca0000;
+$white: #fff;
+$black: #000;
+
+$darkest-grey:  lighten(#000, 13.5%); // #222
+$dark-grey:    lighten(#000, 20%);   // #333
+$grey:         lighten(#000, 33.5%); // #555
+$light-grey:   lighten(#000, 66.7%); // #777
+$lighter-grey:   lighten(#000, 76.5%); // #777
+$lightest-grey: lighten(#000, 86.5%); // #eee
+
+$link-visited-color: $light-grey;
+
+$heading-color: #111;
+$link-color: $red;
+$link-hover-color: $red;
+

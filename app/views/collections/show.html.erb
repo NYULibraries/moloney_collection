@@ -1,0 +1,18 @@
+<% provide(:title, @collection.title) %>
+<div class='container'>
+  <div class="bread">
+    <span class='bread_first'>COLLECTION: </span><span class='bread_second'> <%= @collection.title.upcase %></span>
+  </div>
+  <div class='page_intro'>
+    <%= image_tag(@collection.image, class: "description_img") %>
+    <%= @collection.description.html_safe %> 
+  </div>
+</div>
+
+<div class='container'>
+    <div class='artist_grid'>
+      <%= render @songs %>
+  </div>
+</div>
+
+

@@ -1,0 +1,125 @@
+// Variables
+$base-font-family: 'Roboto', sans-serif;
+$base-font-size: 18px;
+$base-font-weight: 300;
+
+$fixed-font-family: 'Andale Mono', AndaleMono, monospace;
+$fixed-font-size: 15px;
+$fixed-line-height: 1.2;
+
+$heading-font-family: 'Lato', sans-serif;
+$heading-font-weight: 700;
+
+// Base styles
+
+body {
+  color: $dark-grey;
+  font-size: $base-font-size;
+  font-family: $base-font-family;
+  font-weight: $base-font-weight;
+  line-height: 1.6;
+}
+
+.navbar {
+  color: $dark-grey;
+  font-size: .90em;
+  font-family: $heading-font-family;
+}
+
+
+// Typography
+a {
+  color: $link-color;
+  text-decoration: none; 
+}
+
+.pullquote {
+  text-align: center;
+  border-top: 1px solid $lightest-grey; 
+  border-bottom: 1px solid $lightest-grey; 
+}
+
+.bread {
+  font-family: $heading-font-family;
+  font-size: 1.2em;
+  padding: 20px 0;
+  border-top: 1px solid $lightest-grey; 
+  border-bottom: 1px solid $lightest-grey; 
+  .bread_first {
+    color: $dark_grey;
+   }
+
+  .bread_second {
+    color: $light_grey;
+  }
+}
+
+  .page_intro {
+    padding: 20px;
+    overflow: auto;
+    border-bottom: 1px solid $lightest-grey; 
+    color: $dark-grey;
+  }
+
+.fixed { font-family: $fixed-font-family; font-size: $fixed-font-size; line-height: $fixed-line-height; }
+
+.italic { font-style: italic; }
+.bold   { font-weight: 700; }
+
+.h1, .h2, .h3, .h4, .h5, .h6 { font-family: $heading-font-family; font-weight: $heading-font-weight; }
+.h1, .h2 { line-height: 1.1; }
+.h3, .h4 { line-height: 1.3; }
+.h1 { font-size: 400%; letter-spacing: -2px; }
+.h2 { font-size: 250%; letter-spacing: -1px; }
+.h3 { font-size: 200%; }
+.h4 { font-size: 180%; }
+.h5 { font-size: 130%; }
+.h6 { font-size: 100%; }
+
+.block-margins { margin: 1em 0; }
+
+.unordered-list { list-style-type: disc; }
+.ordered-list { list-style: decimal; }
+
+.typography {
+
+  i, em { @extend .italic; }
+  b, strong { @extend .bold; }
+  
+  h1 { @extend .h1; margin: 1em 0 0.5em; }
+  h2 { @extend .h2; margin: 1em 0 0.5em; }
+  h3 { @extend .h3; margin: 1em 0 0.5em; }
+  h4 { @extend .h4; margin: 1em 0 0.5em; }
+  h5 { @extend .h5; margin: 1em 0 0.5em; }
+  h6 { @extend .h6; margin: 1em 0 0.5em; }
+  
+  p, ul, ol, pre { @extend .block-margins; }
+  
+  ul { @extend .unordered-list; }
+  ol { @extend .ordered-list; }
+  
+  pre, code { @extend .fixed; }
+}
+
+// Modifiers
+
+.float-left  { float: left; color: $dark-grey}
+.float-right { float: right; color: $light-grey}
+
+.text-left   { text-align: left   !important; }
+.text-center { text-align: center !important; }
+.text-right  { text-align: right  !important; }
+
+//Object definitions
+
+.content {
+  margin: 0 auto;
+  width: 32em;
+}
+
+.pullquote {
+  h3 {
+    color: $light-grey;
+    font-family: $heading-font-family;
+  }
+}

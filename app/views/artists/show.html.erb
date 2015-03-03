@@ -1,0 +1,17 @@
+<% provide(:title, @artist.name) %>
+<div class='container'>
+  <div class="bread">
+    <span class='bread_first'><%= @artist.name.upcase %></span>
+  </div>
+  <div class='page_intro'>
+    <%= image_tag(@artist.image, class: "description_img") %>
+    <p>
+      <%= @artist.biographical_note.html_safe %>
+    </p>
+  </div>
+
+    <div class='song_grid'>
+      <h4>SONGS FROM <em><%= @artist.name.upcase %></em></h4>
+      <%= render @related_song  %>
+  </div>
+</div>

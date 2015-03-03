@@ -1,0 +1,42 @@
+// Styles for logo and nav, check variables for bootstrap nav overrides 
+
+.header {
+  img {
+    margin: 0 auto;
+    padding: 20px;
+    @media(min-width:$tablet) {
+      margin: 0;
+      padding: 45px 5px 20px 10%;
+    }
+  }
+}
+
+.navbar {
+  margin-bottom: 20px;
+  @media(max-width:$grid_float_breakpoint) {
+    padding-left: 8%;
+  }
+  .navbar-collapse.in {
+    overflow-y: visible;
+  }
+  .navbar-nav {
+    li {
+      padding-left: 3px;
+      padding-right: 3px;
+    }  
+    @media(min-width:$tablet) {
+      display: inline-block;
+      float: none;
+      vertical-align: top;
+    }
+  }
+  .navbar-header {
+    margin-bottom: 20px;
+  }
+  .navbar-collapse {
+    @media(min-width:$grid_float_breakpoint) {
+      text-align: center;
+    }
+  }
+}
+

@@ -1,0 +1,29 @@
+<% provide(:title, @song.name + ": " + @song.title) %>
+<div class='container'>
+  <div class="bread">
+    <span class='bread_first'><%= @song.name.upcase %>: </span><span class='bread_second'> <%= @song.title.upcase %></span>
+  </div>
+  <div class='page_intro'>
+    <div class='song_player'>
+      <div class="embed_wrapper">
+        <%= image_tag(@song.thumbnail) %>
+      </div>
+      <div class="song_metadata">
+        <div class="song_title"><%= @song.name.upcase %>: <%= @song.title.upcase %> &nbsp; &nbsp; (<%= @song.duration %>)</div>
+        <div class="song_description"><%= @song.description.html_safe %></div>
+        <% if @song.transcript? %>
+          <p class="float-right"><strong><%= link_to "TRANSCRIPT", @song.transcript.url %></strong></p>
+        <% end %>
+        <ul class="song_social">
+         <li><a onclick="window.open('http://twitter.com/share','C2G','menubar=no,width=550,height=250,toolbar=no'); return false;" href="#"><%= icon('twitter') %></i></a></li>
+         <li><a href="#" onclick="window.open('https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(location.href), 'facebook-share-dialog', 'width=626,height=436'); return false;"><%= icon('facebook') %></i></a></li>
+         <li><a href="mailto:?subject=Mick%20Moloney%20Collection&body=<%= @song.name+ ": " + @song.title + "%0A" + request.original_url %>"><%= icon('envelope') %></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class='song_grid'>
+    <h4>RELATED SONGS</h4>
+      <%= render @related_song  %>
+    </div>
+  </div>
