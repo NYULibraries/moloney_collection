@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150224224753) do
+ActiveRecord::Schema.define(version: 20150304194024) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace",     limit: 255
@@ -139,6 +139,22 @@ ActiveRecord::Schema.define(version: 20150224224753) do
   end
 
   add_index "song_temp", ["slug"], name: "index_songs_on_slug", using: :btree
+
+  create_table "song_time", force: :cascade do |t|
+    t.string   "title",         limit: 255
+    t.text     "description",   limit: 65535
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.integer  "artist_id",     limit: 4
+    t.text     "embed",         limit: 65535
+    t.integer  "collection_id", limit: 4
+    t.string   "slug",          limit: 255
+    t.string   "refid",         limit: 255
+    t.string   "aiamm",         limit: 255
+    t.string   "duration",      limit: 255
+  end
+
+  add_index "song_time", ["slug"], name: "index_songs_on_slug", using: :btree
 
   create_table "songs", force: :cascade do |t|
     t.string   "title",         limit: 255
