@@ -1,6 +1,5 @@
 class StaticPagesController < ApplicationController
   def home 
-    @song_grid = Song.order('id DESC').limit(6)
   end
 
   def contact 
