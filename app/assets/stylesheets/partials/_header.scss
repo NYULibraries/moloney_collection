@@ -3,10 +3,10 @@
 .header {
   img {
     margin: 0 auto;
-    padding: 20px;
+    position: absolute;
+    z-index: 1000;
     @media(min-width:$tablet) {
       margin: 0;
-      padding: 45px 5px 20px 10%;
     }
   }
 }
@@ -14,7 +14,9 @@
 .navbar {
   margin-bottom: 20px;
   @media(max-width:$grid_float_breakpoint) {
-    padding-left: 8%;
+  }
+  .navbar-toggle {
+    margin: 10px;
   }
   .navbar-collapse.in {
     overflow-y: visible;
@@ -23,6 +25,9 @@
     li {
       padding-left: 3px;
       padding-right: 3px;
+      a {
+        color: $white;
+      }
     }  
     @media(min-width:$tablet) {
       display: inline-block;

@@ -1,12 +1,13 @@
 // Bootstrap overrides
 $grid-float-breakpoint: 1060px; //Bootstrap navbar collapse
-$jumbotron-bg: $white;
-$navbar-default-bg: $white;
+$navbar-default-bg: none;
 $navbar-default-border: none;
 $navbar-default-link-active-color: $red;
 $navbar-default-link-hover-color: $red;
 $navbar-default-link-active-bg: $white;
 $navbar-height: 35px;
+$body-bg: none;
+
 
 // Responsive
 $desktop: 1200px;
