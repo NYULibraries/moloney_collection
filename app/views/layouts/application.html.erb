@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html style="background: url(<%= bgimg(yield(:page_bg)) %>) no-repeat center center fixed;">
 <head>
   <meta charset="utf-8" />
   <meta name="ROBOTS" content="NOODP" />
@@ -13,16 +13,12 @@
 
 </head>
 <body>
-  <div class="page_container">
-    <div class="container">
-      <%= render 'layouts/header' %>
-    </div>
-    <div class="container">
+    <%= render 'layouts/header' %>
+  <div class='page_content'>
       <%= yield %>
       <%= render 'layouts/footer' %>
       <%= render "javascript" %>
       <%= debug(params) if Rails.env.development? %>
-    </div>
   </div>
 </body>
 </html>
