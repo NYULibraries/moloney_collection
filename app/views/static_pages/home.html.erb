@@ -1,13 +1,28 @@
 <% provide(:page_bg, image_path("home_header.jpg") ) %>
-  <div class='container'>
-    <div class='row'>
-    <div class='col-lg-4'>
-      <h4>MICK MOLONEY</h4>
-      <p>Quisque in elit vulputate, rhoncus arcu pulvinar, iaculis est. Fusce mollis purus id enim commodo congue. Aliquam sit amet rhoncus dui. Vestibulum nisl orci, aliquam sed risus nec, dapibus ullamcorper diam. Suspendisse potenti. Proin gravida elementum ex a fermentum. Nullam ut hendrerit ipsum, vel fringilla turpis. Curabitur dapibus, enim sed ultrices feugiat, turpis erat suscipit orci, sit amet tincidunt lectus lacus id ipsum. Nam convallis tellus quam, eget finibus diam scelerisque ac. Donec lacinia, lectus a pretium vulputate, ex magna interdum eros, eu commodo neque nunc auctor quam. Curabitur orci nisl, auctor ac nunc in, lobortis commodo tellus. Aliquam feugiat augue id mi facilisis, sed egestas orci venenatis. Donec sed ante pulvinar, cursus sapien at, auctor sapien. Pellentesque in odio in augue faucibus placerat eu eget sem. Sed eget molestie elit. Nam dictum velit lobortis tellus efficitur, sed fringilla neque tristique.</p>
+  <div class='container-fluid'>
+    <div class='col-lg-12'>
+        <p class='pullquote'>Dr. Mick Moloney is the Global Distinguished Professor of Music and Irish Studies at New York University’s Glucksman Ireland House. The Mick Moloney Irish American Music and Popular Culture Collection at the Archives of Irish America consists of a variety of materials documenting Moloney’s research on Irish traditional music, as well as representations of Irish and Irish Americans in popular culture. &nbsp; &nbsp; <%=link_to "more >>", "about" %></p>
     </div>
-    <div class='col-lg-8'>
-      <h4>THE COLLECTION</h4>
-      <p>Quisque in elit vulputate, rhoncus arcu pulvinar, iaculis est. Fusce mollis purus id enim commodo congue. Aliquam sit amet rhoncus dui. Vestibulum nisl orci, aliquam sed risus nec, dapibus ullamcorper diam. Suspendisse potenti. Proin gravida elementum ex a fermentum. Nullam ut hendrerit ipsum, vel fringilla turpis. Curabitur dapibus, enim sed ultrices feugiat, turpis erat suscipit orci, sit amet tincidunt lectus lacus id ipsum. Nam convallis tellus quam, eget finibus diam scelerisque ac. Donec lacinia, lectus a pretium vulputate, ex magna interdum eros, eu commodo neque nunc auctor quam. Curabitur orci nisl, auctor ac nunc in, lobortis commodo tellus. Aliquam feugiat augue id mi facilisis, sed egestas orci venenatis. Donec sed ante pulvinar, cursus sapien at, auctor sapien. Pellentesque in odio in augue faucibus placerat eu eget sem. Sed eget molestie elit. Nam dictum velit lobortis tellus efficitur, sed fringilla neque tristique.</p>
+    <div class='col-xs-12 col-sm-4 col-lg-4 track_col'>
+      <h6><%= icon('play-circle') %> RECENTLY ADDED RECORDINGS</h6>
+        <% @song_list.each do |artist, songs| %>
+          <div class='col-xs-12 col-sm-12 col-lg-12'>
+            <%= image_tag(artist.image, class: "songlist_img") %>
+            <p><%= artist.name %></p>
+              <ul>
+                <% for song in songs %>
+                  <li><%= song.description.html_safe %></li>
+                <% end %>
+              </ul>
+             </div>
+          <% end %>
+    </div>
+    <div class='col-xs-12 col-sm-8 col-lg-8'>
+      <h6><%= icon('th') %> RECENT DOCUMENTS</h6>
+        <div class="row">
+           <%= render @doc_grid  %>
+        </div>
     </div>
   </div>
 </div>
+

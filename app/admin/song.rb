@@ -1,5 +1,5 @@
 ActiveAdmin.register Song do
-  permit_params :artist_id, :collection, :title, :description, :embed, :slug, :refid, :aiamm, :duration
+  permit_params :artist_id, :collection, :description, :embed, :slug, :refid, :aiamm, :duration
   active_admin_import
 
   controller do
@@ -9,7 +9,6 @@ ActiveAdmin.register Song do
   end
 
   index do
-    column :title
     column :artist
     column :aiamm
     column :refid
@@ -26,7 +25,6 @@ ActiveAdmin.register Song do
       input :collection
       input :aiamm
       input :refid
-      input :title, :hint => ""
       input :duration, :hint => "Enter as HH:MM:SS, ex. '01:13:02'"
       input :embed, :input_html => { :rows => 5, :cols => 10  }
       input :description, :as => :ckeditor

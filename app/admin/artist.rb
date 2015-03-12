@@ -3,6 +3,16 @@ ActiveAdmin.register Artist do
   active_admin_import
 
   controller do
+    def update
+      update! do |format|
+        format.html { redirect_to admin_artists_path }
+      end
+    end
+    def create
+      create! do |format|
+        format.html { redirect_to admin_artists_path }
+      end
+    end
     def find_resource
       scoped_collection.where(slug: params[:id]).first!
     end

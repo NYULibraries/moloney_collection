@@ -3,6 +3,10 @@ class DocumentsController < InheritedResources::Base
     @documents = Document.all
   end
 
+  def show
+    @document = Document.friendly.find(params[:id])
+  end
+
   private
 
     def document_params
