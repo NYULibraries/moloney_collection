@@ -1,7 +1,7 @@
 class StaticPagesController < ApplicationController
   def home 
-    @doc_grid = Document.order('id DESC').limit(12)
-    @songs = Song.order('id DESC').limit(5)
+    @doc_grid = Document.order('id DESC').limit(6)
+    @songs = Song.order('id DESC').limit(6)
     @song_list = @songs.group_by{ |s| s.artist }
   end
 

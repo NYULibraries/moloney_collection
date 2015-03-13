@@ -32,11 +32,6 @@ a {
   text-decoration: none; 
 }
 
-.pullquote {
-  text-align: center;
-  border-top: 1px solid $lightest-grey; 
-  border-bottom: 1px solid $lightest-grey; 
-}
 
 .bread {
   font-family: $heading-font-family;
@@ -97,4 +92,5 @@ h6 { font-size: 95%; background-color: $dark-grey; padding: 20px; text-align: ce
     background-color: $lightest-grey;
     font-family: $heading-font-family;
     padding: 5%;
+    margin-bottom: 20px;
 }
