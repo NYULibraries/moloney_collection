@@ -18,6 +18,9 @@ html {
   border-radius: 2px;
   .container-fluid {
     padding: 2%;
+    @media(max-width:$tablet) {
+      padding: 0; 
+    }
     .track_col {
       border-right: 1px solid $lightest-grey;
     }

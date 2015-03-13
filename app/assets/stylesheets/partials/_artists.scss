@@ -1,17 +1,30 @@
 .songlist_wrapper {
   background-color: $light-blue;
+  border: 1px solid $lightest-grey;
   margin: 15px 0;
   padding: 0;
-
+  @media(max-width:$tablet) {
+    border: 0;
+  }
+  
   .songlist_img_wrapper {
     img {
       float: left;
       padding-right: 10px;
+      @media(max-width:$tablet) {
+        padding-top: 5%;
+        float: none;
+        margin: 0 auto;
+        display: block;
+      }
     }
     p {
      padding: 15px 0 10px;
      font-size: 1.2em;
      border-bottom: 1px solid $lightest-grey;
+     @media(max-width:$tablet) {
+       text-align: center;
+     }
     }
   }  
   ul li {
