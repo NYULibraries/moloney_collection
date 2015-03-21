@@ -68,7 +68,7 @@ h2 { font-size: 250%; letter-spacing: -1px; }
 h3 { font-size: 200%; }
 h4 { font-size: 180%; }
 h5 { font-size: 130%; }
-h6 { font-size: 95%; background-color: $dark-grey; padding: 20px; text-align: center; color: $lightest-grey; margin-top: 20px; } /* header boxes in left column on HOME */
+h6 { font-size: 95%; background-color: $dark-blue; padding: 20px; text-align: center; color: $lightest-grey; margin-top: 20px; } /* header boxes in left column on HOME */
 
 .block-margins { margin: 1em 0; }
 
@@ -92,5 +92,5 @@ h6 { font-size: 95%; background-color: $dark-grey; padding: 20px; text-align: ce
     background-color: $lightest-grey;
     font-family: $heading-font-family;
     padding: 5%;
-    margin-bottom: 20px;
+    margin: 10px 0 20px 0;
 }

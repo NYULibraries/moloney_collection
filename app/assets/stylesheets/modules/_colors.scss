@@ -10,11 +10,16 @@ $lighter-grey:   lighten(#000, 76.5%); // #777
 $lightest-grey: lighten(#000, 86.5%); // #eee
 
 $light-blue: #f3f6f7; 
-$green: #2f6b36;
 
-$link-visited-color: $light-grey;
+$dark-blue: #17181F;
+$dark-green: #314D4A;
+$light-green: #A6C288;
+$green: #0B8770;
+$yellow: #EBE68D;
+
+$link-color: $dark-green;
+$link-hover-color: $grey;
+$link-visited-color: $dark-grey;
 
 $heading-color: #111;
-$link-color: $red;
-$link-hover-color: $red;
 
