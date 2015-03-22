@@ -1,7 +1,6 @@
 class ArtistsController < InheritedResources::Base
   def index
-    @artists = Artist.all
-    @artist_grid = Artist.all
+    @artist_grid = Artist.order('name asc')
   end
 
   def show

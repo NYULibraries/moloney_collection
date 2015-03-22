@@ -22,7 +22,7 @@ body {
 
 .navbar {
   font-family: $heading-font-family;
-  font-size: 1.3em;
+  font-size: 1.1em;
 }
 
 
@@ -32,28 +32,12 @@ a {
   text-decoration: none; 
 }
 
-
-.bread {
-  font-family: $heading-font-family;
-  font-size: 1.2em;
-  padding: 20px 0;
-  border-top: 1px solid $lightest-grey; 
+.page_intro {
+  padding: 20px;
+  overflow: auto;
   border-bottom: 1px solid $lightest-grey; 
-  .bread_first {
-    color: $dark_grey;
-   }
-
-  .bread_second {
-    color: $light_grey;
-  }
+  color: $dark-grey;
 }
-
-  .page_intro {
-    padding: 20px;
-    overflow: auto;
-    border-bottom: 1px solid $lightest-grey; 
-    color: $dark-grey;
-  }
 
 .fixed { font-family: $fixed-font-family; font-size: $fixed-font-size; line-height: $fixed-line-height; }
 

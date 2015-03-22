@@ -1,10 +1,5 @@
-<div class="col-xs-12 col-sm-6 col-md-4">
-  <div class='song_wrapper'>
-    <div class='image_wrapper'>
-      <p><%= song.artist.name  %></p>
-      <p><%= truncate(song.description, length: 50, :escape => false)  %></p>
-      <p class="float-left"><%= link_to song.refid.upcase, song_path(song.slug) %></p>
-      <p class="float-right"><%= song.duration %></p>
-    </div>
-  </div>
-</div>
+<tr>
+  <td><%= song.description.html_safe  %></td>
+  <td><%= song.duration %></td>
+  <td><%= song.refid.upcase %></td>
+</tr>

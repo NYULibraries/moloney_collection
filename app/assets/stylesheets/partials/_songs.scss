@@ -1,3 +1,67 @@
+.songlist_wrapper {
+  background-color: $light-blue;
+  border: 1px solid $lightest-grey;
+  margin: 15px 0;
+  padding: 0;
+  overflow: auto;
+
+  a {
+    color: $dark-grey;
+  }
+
+  ul li {
+    padding: 10px;
+    list-style-type: none;
+    margin-bottom: 5px;
+
+    &:before {
+      content: "\f105";
+      font-family: FontAwesome;
+      padding-right: 10px;
+      color: $green;
+    }
+  }
+ 
+  .songlist_img_wrapper {
+    img {
+      float: left;
+      padding-right: 10px;
+      width: 40%;
+      max-width: 300px; 
+      @media(max-width:$phone) {
+        padding-right: 0;
+        padding-top: 25px;
+        float: none;
+        margin: 0 auto;
+        display: block;
+        width: 100%;
+      }
+    }
+
+    p {
+     padding: 15px 0 10px;
+     font-size: 1.2em;
+     border-bottom: 1px solid $lightest-grey;
+     @media(max-width:$tablet) {
+       text-align: center;
+     }
+    }
+  }  
+
+  .song_desc {
+    clear: both;
+    min-height: 140px;
+    @media(max-width:$tablet) {
+      min-height: 170px;
+    }
+    @media(min-width:$laptop) {
+      min-height: 110px;
+    }
+  }
+}
+
+
+
 // For individual song pages and grid
 .song_wrapper {
   padding-top: 50px;

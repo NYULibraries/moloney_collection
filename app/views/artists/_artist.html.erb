@@ -1,11 +1,11 @@
-<div class="col-xs-6 col-sm-4 col-md-3">
-  <div class='artist_wrapper'>
-    <div class='image_wrapper'>
+<div class='col-xxs col-xs-6 col-lg-6'>
+  <div class='artist_grid_item'>
+    <div class='col-xs-12 col-lg-4 artist_grid_img'>
       <%= link_to image_tag(artist.image, class: "artist_img"), artist_path(artist.slug) %>
-      <div class="artist_title"><%= link_to artist.name.upcase, artist_path(artist.slug) %></div>
     </div>
-    <div class='artist_desc'>
-      <p><%= truncate(artist.biographical_note, length: 150, :escape => false)  %></p>
+    <div class='col-xs-12 col-lg-8 artist_grid_text'>
+      <%= link_to artist.name.upcase, artist_path(artist.slug), :class => "artist_name" %>
+      <%= truncate(artist.biographical_note, length: 200, :escape => false) %>
     </div>
   </div>
 </div>

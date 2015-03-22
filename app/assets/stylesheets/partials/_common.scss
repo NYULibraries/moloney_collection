@@ -1,6 +1,9 @@
 html {
+  background: $darkest-grey;
+}
+
+body {
   background-size: cover;
-  background-color: #808080;
   background: no-repeat top center;
   background-attachment: scroll;
   -webkit-background-size: cover;
@@ -15,9 +18,15 @@ html {
   margin: 0 auto;
   width: 98%;
   max-width: 1200px;
-  border-radius: 2px;
   .container-fluid {
     padding: 2%;
   }
 }
 
+@media (max-width: 480px) { 
+   .col-xxs {
+      display:block;
+      float:none;
+      width: 100%
+   }
+}
