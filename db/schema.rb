@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150311165458) do
+ActiveRecord::Schema.define(version: 20150323182205) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace",     limit: 255
@@ -125,6 +125,13 @@ ActiveRecord::Schema.define(version: 20150311165458) do
   add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id", using: :btree
   add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
 
+  create_table "gaelic_athletes", force: :cascade do |t|
+    t.string   "name",        limit: 255
+    t.text     "description", limit: 65535
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+  end
+
   create_table "song_temp", force: :cascade do |t|
     t.string   "title",         limit: 255
     t.text     "description",   limit: 65535
@@ -140,22 +147,6 @@ ActiveRecord::Schema.define(version: 20150311165458) do
   end
 
   add_index "song_temp", ["slug"], name: "index_songs_on_slug", using: :btree
-
-  create_table "song_time", force: :cascade do |t|
-    t.string   "title",         limit: 255
-    t.text     "description",   limit: 65535
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
-    t.integer  "artist_id",     limit: 4
-    t.text     "embed",         limit: 65535
-    t.integer  "collection_id", limit: 4
-    t.string   "slug",          limit: 255
-    t.string   "refid",         limit: 255
-    t.string   "aiamm",         limit: 255
-    t.string   "duration",      limit: 255
-  end
-
-  add_index "song_time", ["slug"], name: "index_songs_on_slug", using: :btree
 
   create_table "songs", force: :cascade do |t|
     t.text     "description",   limit: 65535

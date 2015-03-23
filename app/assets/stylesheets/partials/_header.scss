@@ -19,14 +19,17 @@
 .navbar {
   background-color: $dark-blue;
   margin: 0;
+  border-radius: 0!important;
   .navbar-toggle {
     margin: 10px;
   }
   .navbar-collapse.in {
     overflow-y: visible;
   }
-  .navbar-nav {
+  &.navbar-nav {
     width: 100%;
+    margin: 0 auto;
+    display: block;
     li {
       padding-left: 3px;
       padding-right: 3px;

@@ -1,0 +1,2 @@
+module GaelicAthletesHelper
+end

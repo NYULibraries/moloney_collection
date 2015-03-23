@@ -8,10 +8,7 @@ class StaticPagesController < ApplicationController
   def contact 
   end
 
-  def mick_moloney
-  end
-
-  def moloney_collection
+  def about
   end
 
   def tamiment_library

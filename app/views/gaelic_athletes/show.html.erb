@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @gaelic_athlete.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @gaelic_athlete.description %>
+</p>
+
+<%= link_to 'Edit', edit_gaelic_athlete_path(@gaelic_athlete) %> |
+<%= link_to 'Back', gaelic_athletes_path %>
