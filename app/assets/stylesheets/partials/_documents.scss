@@ -14,3 +14,24 @@
   }
 }
 
+.doc_wrapper {
+  background: $light-blue;
+  padding: 20px;
+  .doc_img { 
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.doc_page_grid {
+  padding: 3% 0;
+  .doc_grid_item {
+    padding: 10px;
+    img {
+      max-width: 100%;
+      max-height: 200px;
+      overflow: hidden;
+    }
+  }
+}

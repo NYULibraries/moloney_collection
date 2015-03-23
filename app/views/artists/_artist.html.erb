@@ -4,7 +4,7 @@
       <%= link_to image_tag(artist.image, class: "artist_img"), artist_path(artist.slug) %>
     </div>
     <div class='col-xs-12 col-lg-8 artist_grid_text'>
-      <%= link_to artist.name.upcase, artist_path(artist.slug), :class => "artist_name" %>
+      <h5><%= link_to artist.name.upcase, artist_path(artist.slug), :class => "artist_name" %></h5>
       <%= truncate(artist.biographical_note, length: 200, :escape => false) %>
     </div>
   </div>

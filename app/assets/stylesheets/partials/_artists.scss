@@ -14,15 +14,20 @@
       }
     }
   .artist_grid_text {
-    min-height: 210px;
+    @media(max-width:$tablet) {
+      min-height: 225px;
+    }
   
-    a.artist_name {
+    h5 {
       padding: 10px 0;
+      line-height: 1.2em;
+      @media(max-width:$tablet) {
+        text-align:center;
+      }
   
     }
   }
 }
-
 
 .image_wrapper {
   img {

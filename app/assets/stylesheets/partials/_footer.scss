@@ -4,6 +4,9 @@ footer {
   padding: 30px 30px 20px;
   text-align: center;
   font-family: $base-font-family;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
   ul {
     list-style-type: none;
     width: 100%;
