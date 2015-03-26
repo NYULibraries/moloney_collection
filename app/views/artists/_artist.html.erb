@@ -5,7 +5,7 @@
     </div>
     <div class='col-xs-12 col-lg-8 artist_grid_text'>
       <h5><%= link_to artist.name.upcase, artist_path(artist.slug), :class => "artist_name" %></h5>
-      <%= truncate(artist.biographical_note, length: 200, :escape => false) %>
+      <div><%= truncate(artist.biographical_note, length: 150, :escape => false) %></div>
     </div>
   </div>
 </div>

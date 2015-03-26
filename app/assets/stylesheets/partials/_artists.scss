@@ -1,35 +1,29 @@
 .artist_grid_item {
-  background-color: $light-blue;
+  background-color: $white;
   overflow: auto;
   margin: 10px;
+  border: 1px solid $lighter-grey;
 
   .artist_grid_img {
     padding: 0;
 
     img {
-      width: 100%;
-      max-width: 350px;
       display: block;
       margin: 0 auto;
+      padding: 10px;
       }
     }
+
   .artist_grid_text {
-    @media(max-width:$tablet) {
-      min-height: 225px;
+    @media(max-width:$laptop) {
+      min-height: 190px;
     }
-  
-    h5 {
-      padding: 10px 0;
-      line-height: 1.2em;
-      @media(max-width:$tablet) {
-        text-align:center;
-      }
-  
+    @media(mmax-width:$tablet) {
+      min-height: 250px;
     }
   }
 }
 
-.artist_img {
-  width: 100%;
-  max-width: 400px;
+.table-striped > tbody > tr:nth-of-type(even) {
+  background-color: $lightest-grey;
 }

@@ -6,12 +6,12 @@ $darkest-grey:  lighten(#000, 13.5%); // #222
 $dark-grey:    lighten(#000, 20%);   // #333
 $grey:         lighten(#000, 33.5%); // #555
 $light-grey:   lighten(#000, 66.7%); // #777
-$lighter-grey:   lighten(#000, 76.5%); // #777
-$lightest-grey: lighten(#000, 86.5%); // #eee
+$lighter-grey:   lighten(#000, 86.5%); // #777
+$lightest-grey: #ededed;
 
-$light-blue: #f3f6f7; 
 
 $dark-blue: #17181F;
+$light-blue: #f3f6f7; 
 $dark-green: #314D4A;
 $light-green: #A6C288;
 $green: #0B8770;
@@ -22,4 +22,3 @@ $link-hover-color: $grey;
 $link-visited-color: $dark-grey;
 
 $heading-color: #111;
-

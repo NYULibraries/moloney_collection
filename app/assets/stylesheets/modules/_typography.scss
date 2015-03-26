@@ -51,7 +51,7 @@ h1 { font-size: 400%; letter-spacing: -2px; }
 h2 { font-size: 250%; letter-spacing: -1px; }
 h3 { font-size: 200%; }
 h4 { font-size: 180%; }
-h5 { font-size: 130%; }
+h5 { font-size: 140%; padding: 10px 0; line-height: 1.2em; @media(max-width:$tablet) { text-align:center; } } /* used on artist page for names */
 h6 { font-size: 95%; background-color: $dark-blue; padding: 20px; text-align: center; color: $lightest-grey; margin-top: 20px; } /* header boxes in left column on HOME */
 
 .block-margins { margin: 1em 0; }

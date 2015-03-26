@@ -1,6 +1,6 @@
 .songlist_wrapper {
   background-color: $light-blue;
-  border: 1px solid $lightest-grey;
+  border: 1px solid $lighter-grey;
   margin: 15px 0;
   padding: 0;
   overflow: auto;
@@ -41,7 +41,7 @@
     p {
      padding: 15px 0 10px;
      font-size: 1.2em;
-     border-bottom: 1px solid $lightest-grey;
+     border-bottom: 1px solid $lighter-grey;
      @media(max-width:$tablet) {
        text-align: center;
      }
