@@ -1,5 +1,5 @@
 ActiveAdmin.register Song do
-  permit_params :artist_id, :collection, :description, :embed, :slug, :refid, :aiamm, :duration
+  permit_params :artist_id, :collection, :date, :description, :embed, :slug, :refid, :aiamm, :duration
   active_admin_import
 
   controller do

@@ -1,14 +1,12 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @gaelic_athlete.name %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @gaelic_athlete.description %>
-</p>
-
-<%= link_to 'Edit', edit_gaelic_athlete_path(@gaelic_athlete) %> |
-<%= link_to 'Back', gaelic_athletes_path %>
+<% provide(:title, @gaelic_athlete.name) %>
+<div class='container-fluid'>
+  <h4>GAELIC ATHLETE: <%= @gaelic_athlete.name.upcase %></h4>
+  <div class='row'>
+    <div class='col-xxs col-xs-6 col-md-4'>
+      <%= image_tag(@gaelic_athlete.image, class: "gaelic_athlete_img") %>
+    </div>
+    <div class='col-xxs col-xs-6 col-md-8'>
+      <%= @gaelic_athlete.biographical_note.html_safe %>
+    </div>
+  </div>
+</div>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150323182205) do
+ActiveRecord::Schema.define(version: 20150327191151) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace",     limit: 255
@@ -107,9 +107,17 @@ ActiveRecord::Schema.define(version: 20150323182205) do
   add_index "documents", ["slug"], name: "index_documents_on_slug", using: :btree
 
   create_table "finding_aids", force: :cascade do |t|
-    t.text     "body_text",  limit: 65535
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.string   "creator",         limit: 255
+    t.string   "title",           limit: 255
+    t.string   "dates_inclusive", limit: 255
+    t.string   "dates_bulk",      limit: 255
+    t.text     "abstract",        limit: 65535
+    t.text     "quantity",        limit: 65535
+    t.text     "location_note",   limit: 65535
+    t.string   "language",        limit: 255
+    t.string   "call_phrase",     limit: 255
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
   end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
@@ -126,10 +134,25 @@ ActiveRecord::Schema.define(version: 20150323182205) do
   add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type", using: :btree
 
   create_table "gaelic_athletes", force: :cascade do |t|
-    t.string   "name",        limit: 255
+    t.string   "name",               limit: 255
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
+    t.string   "slug",               limit: 255
+    t.string   "image_file_name",    limit: 255
+    t.string   "image_content_type", limit: 255
+    t.integer  "image_file_size",    limit: 4
+    t.datetime "image_updated_at"
+    t.text     "biographical_note",  limit: 65535
+  end
+
+  add_index "gaelic_athletes", ["slug"], name: "index_gaelic_athletes_on_slug", unique: true, using: :btree
+
+  create_table "series", force: :cascade do |t|
+    t.string   "title",       limit: 255
     t.text     "description", limit: 65535
     t.datetime "created_at",                null: false
     t.datetime "updated_at",                null: false
+    t.string   "slug",        limit: 255
   end
 
   create_table "song_temp", force: :cascade do |t|
@@ -159,6 +182,7 @@ ActiveRecord::Schema.define(version: 20150323182205) do
     t.string   "refid",         limit: 255
     t.string   "aiamm",         limit: 255
     t.string   "duration",      limit: 255
+    t.string   "date",          limit: 255
   end
 
   add_index "songs", ["slug"], name: "index_songs_on_slug", using: :btree

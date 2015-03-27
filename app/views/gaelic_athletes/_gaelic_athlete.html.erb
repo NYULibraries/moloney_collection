@@ -1,0 +1,11 @@
+<div class='col-xxs col-xs-12 col-md-6'>
+  <div class='gaelic_athlete_grid_item'>
+    <div class='col-xxs col-xs-4 col-lg-4 gaelic_athlete_grid_img'>
+      <%= link_to image_tag(gaelic_athlete.image, class: "gaelic_athlete_img"), gaelic_athlete_path(gaelic_athlete.slug) %>
+    </div>
+    <div class='col-xxs col-xs-8 col-lg-8 gaelic_athlete_grid_text'>
+      <h5><%= link_to gaelic_athlete.name.upcase, gaelic_athlete_path(gaelic_athlete.slug), :class => "gaelic_athlete_name" %></h5>
+      <div><%= truncate(gaelic_athlete.biographical_note, length: 150, :escape => false) %></div>
+    </div>
+  </div>
+</div>

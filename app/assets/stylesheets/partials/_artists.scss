@@ -13,17 +13,12 @@
       padding: 10px;
       }
     }
-
-  .artist_grid_text {
-    @media(max-width:$laptop) {
-      min-height: 190px;
-    }
-    @media(mmax-width:$tablet) {
-      min-height: 250px;
-    }
   }
+
+.table-striped > tbody > tr:nth-of-type(odd) {
+  background-color: $white;
 }
 
 .table-striped > tbody > tr:nth-of-type(even) {
-  background-color: $lightest-grey;
+  background-color: $light-blue;
 }

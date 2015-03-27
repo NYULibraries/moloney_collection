@@ -1,9 +1,40 @@
 <% provide(:title, "Finding Aid") %>
-<div class='container'>
-  <h4>FINDING AID</h4>
-  <div class='page_intro'>
-    <p>
-      <%= @findingaid.body_text %>
-    </p>
+<div class='container-fluid'>
+  <div class='row'>
+    <div class='col-xs-12'>
+      <h4>Finding Aid</h4>
+      <p>
+    Sed vitae magna aliquet nisl iaculis condimentum. Suspendisse vel nisi in lorem ornare consequat eu quis leo. Etiam placerat turpis eget orci semper ullamcorper. Integer odio ex, faucibus in tellus euismod, laoreet pellentesque tellus. Nullam egestas, enim quis posuere sollicitudin, elit odio aliquam ipsum, facilisis dictum massa tortor at justo. Maecenas efficitur at nulla gravida iaculis.
+      </p>
+    </div>
   </div>
 </div>
+
+<div class='container-fluid grey_section'>
+  <div class='row'>
+    <div class='col-xs-12'>
+<table>
+  <tbody>
+    <% @finding_aids.each do |finding_aid| %>
+      <tr>
+        <td><%= finding_aid.creator %></td>
+        <td><%= finding_aid.title %></td>
+        <td><%= finding_aid.dates_inclusive %></td>
+        <td><%= finding_aid.dates_bulk %></td>
+        <td><%= finding_aid.abstract %></td>
+        <td><%= finding_aid.quantity %></td>
+        <td><%= finding_aid.location_note %></td>
+        <td><%= finding_aid.language %></td>
+        <td><%= finding_aid.call_phrase %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+    </div>
+  </div>
+</div>
+
+
+
+

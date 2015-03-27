@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  resources :finding_aids
+
+
   mount Ckeditor::Engine => '/ckeditor'
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
@@ -11,10 +14,8 @@ Rails.application.routes.draw do
   resources :finding_aids, except: [:new, :create, :edit, :update, :destroy]
   resources :songs, except: [:new, :create, :edit, :update, :destroy]
   resources :gaelic_athletes, except: [:new, :create, :edit, :update, :destroy]
+  resources :series, except: [:new, :create, :edit, :update, :destroy]
   
-  get "documents" => "documents#index"
-  get "artists" => "artists#index"
-
   #Static pages
   get "about" => "static_pages#about"
   get "contact" => "static_pages#contact" 

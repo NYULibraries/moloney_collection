@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Creator:</strong>
+  <%= @finding_aid.creator %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @finding_aid.title %>
+</p>
+
+<p>
+  <strong>Dates inclusive:</strong>
+  <%= @finding_aid.dates_inclusive %>
+</p>
+
+<p>
+  <strong>Dates bulk:</strong>
+  <%= @finding_aid.dates_bulk %>
+</p>
+
+<p>
+  <strong>Abstract:</strong>
+  <%= @finding_aid.abstract %>
+</p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @finding_aid.quantity %>
+</p>
+
+<p>
+  <strong>Location note:</strong>
+  <%= @finding_aid.location_note %>
+</p>
+
+<p>
+  <strong>Language:</strong>
+  <%= @finding_aid.language %>
+</p>
+
+<p>
+  <strong>Call phrase:</strong>
+  <%= @finding_aid.call_phrase %>
+</p>
+
+<%= link_to 'Edit', edit_finding_aid_path(@finding_aid) %> |
+<%= link_to 'Back', finding_aids_path %>
