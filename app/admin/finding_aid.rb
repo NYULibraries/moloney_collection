@@ -1,5 +1,5 @@
 ActiveAdmin.register FindingAid do
-  permit_params :creator, :title, :dates_inclusive, :dates_bulk, :abstract, :quantity, :location_note, :language, :call_phrase
+  permit_params :creator, :title, :header, :dates_inclusive, :dates_bulk, :abstract, :quantity, :location_note, :language, :call_phrase
   active_admin_import
 
   index do
@@ -22,6 +22,7 @@ ActiveAdmin.register FindingAid do
       input :location_note, :as => :ckeditor
       input :language
       input :call_phrase
+      input :header, :as => :ckeditor
 
       actions
     end

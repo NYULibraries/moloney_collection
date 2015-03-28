@@ -1,5 +1,9 @@
 class FindingAidsController < InheritedResources::Base
 
+  def index
+    @finding_aid = FindingAid.where(id: 1).first
+  end
+
   private
 
     def finding_aid_params

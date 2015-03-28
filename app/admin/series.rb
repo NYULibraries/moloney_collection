@@ -1,5 +1,5 @@
 ActiveAdmin.register Series do
-  permit_params :title, :description
+  permit_params :title, :description, :table
   active_admin_import
 
   controller do
@@ -20,6 +20,7 @@ ActiveAdmin.register Series do
       input :title
       input :slug
       input :description, :as => :ckeditor
+      input :table, :as => :ckeditor
       li "Created at #{f.object.created_at}" unless f.object.new_record?
       actions
     end

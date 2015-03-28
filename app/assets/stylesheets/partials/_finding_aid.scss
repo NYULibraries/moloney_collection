@@ -1,3 +1,26 @@
-// Place all the styles related to the FindingAids controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.finding_aid_about {
+  tbody > tr > td {
+    padding: 10px;
+    vertical-align: top;
+
+    &:nth-of-type(odd) {
+      width: 25%;
+      font-weight: 700;
+    }
+  }
+}
+
+.nav-tabs.nav-justified > li > a {
+  border-radius: 0;
+}
+
+#top-link-block.affix-top {
+    position: absolute;
+    bottom: -82px;
+    right: 10px;
+}
+#top-link-block.affix {
+    position: fixed;
+    bottom: 18px;
+    right: 40px;
+}

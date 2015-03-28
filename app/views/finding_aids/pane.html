@@ -1,0 +1,40 @@
+        <table class='finding_aid_about'>
+          <tbody>
+            <tr>
+              <td>Creator:</td>
+              <td><%= @finding_aid.creator %></td>
+            </tr>
+            <tr>
+              <td>Title:</td>
+              <td><%= @finding_aid.title %></td>
+            </tr>
+            <tr>
+              <td>Dates (inclusive):</td>
+              <td><%= @finding_aid.dates_inclusive %></td>
+            </tr>
+            <tr>
+              <td>Dates (bulk):</td>
+              <td><%= @finding_aid.dates_bulk %></td>
+            </tr>
+            <tr>
+              <td>Abstract:</td>
+              <td><%= @finding_aid.abstract.html_safe %></td>
+            </tr>
+            <tr>
+              <td>Quantity:</td>
+              <td><%= @finding_aid.quantity.html_safe %></td>
+            </tr>
+            <tr>
+              <td>Location Note:</td>
+              <td><%= @finding_aid.location_note.html_safe %></td>
+            </tr>
+            <tr>
+              <td>Language:</td>
+              <td><%= @finding_aid.language %></td>
+            </tr>
+            <tr>
+              <td>Call Phrase:</td>
+              <td><%= @finding_aid.call_phrase %></td>
+            </tr>
+         </tbody>
+      </table>

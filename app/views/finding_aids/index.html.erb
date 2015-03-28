@@ -2,39 +2,114 @@
 <div class='container-fluid'>
   <div class='row'>
     <div class='col-xs-12'>
-      <h4>Finding Aid</h4>
+      <h4>FINDING AID</h4>
       <p>
-    Sed vitae magna aliquet nisl iaculis condimentum. Suspendisse vel nisi in lorem ornare consequat eu quis leo. Etiam placerat turpis eget orci semper ullamcorper. Integer odio ex, faucibus in tellus euismod, laoreet pellentesque tellus. Nullam egestas, enim quis posuere sollicitudin, elit odio aliquam ipsum, facilisis dictum massa tortor at justo. Maecenas efficitur at nulla gravida iaculis.
+       <ul class="nav nav-justified nav-tabs" data-tabs="tabs">
+          <li role="presentation" class="active"><a data-toggle="tab" href="#about">About</a></li>
+          <li role="presentation"><a data-toggle="tab" href="#series_I">Series I: Private Performances, 1970-1992</a></li>
+          <li role="presentation"><a data-toggle="tab" href="#series_II">Series II: Public Performances, 1965-1997</a></li>
+        </ul>
       </p>
     </div>
   </div>
 </div>
 
-<div class='container-fluid grey_section'>
-  <div class='row'>
-    <div class='col-xs-12'>
-<table>
-  <tbody>
-    <% @finding_aids.each do |finding_aid| %>
-      <tr>
-        <td><%= finding_aid.creator %></td>
-        <td><%= finding_aid.title %></td>
-        <td><%= finding_aid.dates_inclusive %></td>
-        <td><%= finding_aid.dates_bulk %></td>
-        <td><%= finding_aid.abstract %></td>
-        <td><%= finding_aid.quantity %></td>
-        <td><%= finding_aid.location_note %></td>
-        <td><%= finding_aid.language %></td>
-        <td><%= finding_aid.call_phrase %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
 
+<div class='tab-content'>
+
+  <!-- START ABOUT -->
+  <div class='tab-pane active' id='about'>
+    <div class='container-fluid'>
+      <div class='row'>
+        <div class='col-xs-12'>
+          <p>
+            <%= @finding_aid.header.html_safe %>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- START ABOUT GREY -->
+    <div class='container-fluid grey_section'>
+      <div class='row'>
+        <div class='col-xs-12'>
+        <table class='finding_aid_about'>
+          <tbody>
+            <tr>
+              <td>Creator:</td>
+              <td><%= @finding_aid.creator %></td>
+            </tr>
+            <tr>
+              <td>Title:</td>
+              <td><%= @finding_aid.title %></td>
+            </tr>
+            <tr>
+              <td>Dates (inclusive):</td>
+              <td><%= @finding_aid.dates_inclusive %></td>
+            </tr>
+            <tr>
+              <td>Dates (bulk):</td>
+              <td><%= @finding_aid.dates_bulk %></td>
+            </tr>
+            <tr>
+              <td>Abstract:</td>
+              <td><%= @finding_aid.abstract.html_safe %></td>
+            </tr>
+            <tr>
+              <td>Quantity:</td>
+              <td><%= @finding_aid.quantity.html_safe %></td>
+            </tr>
+            <tr>
+              <td>Location Note:</td>
+              <td><%= @finding_aid.location_note.html_safe %></td>
+            </tr>
+            <tr>
+              <td>Language:</td>
+              <td><%= @finding_aid.language %></td>
+            </tr>
+            <tr>
+              <td>Call Phrase:</td>
+              <td><%= @finding_aid.call_phrase %></td>
+            </tr>
+         </tbody>
+      </table>
+
+        </div>
+      </div>
+    </div>
+    <!-- END ABOUT GREY -->
+  </div>
+  <!-- END ABOUT -->
+
+  <!-- START SERIES I --> 
+  <div class='tab-pane' id='series_I'>
+    <div class='container-fluid grey_section'>
+      <div class='row'>
+        <div class='col-xs-12'>
+          <h4>series i</h4>
+        </div>
+      </div>
     </div>
   </div>
+  <!-- END SERIES I -->
+
+  <!-- START SERIES II --> 
+  <div class='tab-pane' id='series_II'>
+    <div class='container-fluid grey_section'>
+      <div class='row'>
+        <div class='col-xs-12'>
+          <h4>series II</h4>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- END SERIES II -->
 </div>
 
-
-
+<!-- child of the body tag -->
+<span id="top-link-block" class="hidden">
+    <a href="#top" class="well well-sm" onclick="$('html,body').animate({scrollTop:0},'slow');return false;">
+        <i class="glyphicon glyphicon-chevron-up"></i> Back to Top
+    </a>
+</span><!-- /top-link-block -->
 

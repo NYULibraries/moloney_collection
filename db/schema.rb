@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150327191151) do
+ActiveRecord::Schema.define(version: 20150327222633) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace",     limit: 255
@@ -46,10 +46,10 @@ ActiveRecord::Schema.define(version: 20150327191151) do
 
   create_table "artists", force: :cascade do |t|
     t.string   "name",                 limit: 255
-    t.datetime "created_at",                         null: false
-    t.datetime "updated_at",                         null: false
+    t.datetime "created_at",                            null: false
+    t.datetime "updated_at",                            null: false
     t.string   "slug",                 limit: 255
-    t.text     "biographical_note",    limit: 65535
+    t.text     "biographical_note",    limit: 16777215
     t.string   "refid",                limit: 255
     t.string   "aiamm",                limit: 255
     t.string   "duration",             limit: 255
@@ -57,7 +57,7 @@ ActiveRecord::Schema.define(version: 20150327191151) do
     t.string   "image_content_type",   limit: 255
     t.integer  "image_file_size",      limit: 4
     t.datetime "image_updated_at"
-    t.text     "recommended_citation", limit: 65535
+    t.text     "recommended_citation", limit: 16777215
   end
 
   create_table "ckeditor_assets", force: :cascade do |t|
@@ -118,6 +118,7 @@ ActiveRecord::Schema.define(version: 20150327191151) do
     t.string   "call_phrase",     limit: 255
     t.datetime "created_at",                    null: false
     t.datetime "updated_at",                    null: false
+    t.text     "header",          limit: 65535
   end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
@@ -135,14 +136,14 @@ ActiveRecord::Schema.define(version: 20150327191151) do
 
   create_table "gaelic_athletes", force: :cascade do |t|
     t.string   "name",               limit: 255
-    t.datetime "created_at",                       null: false
-    t.datetime "updated_at",                       null: false
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
     t.string   "slug",               limit: 255
     t.string   "image_file_name",    limit: 255
     t.string   "image_content_type", limit: 255
     t.integer  "image_file_size",    limit: 4
     t.datetime "image_updated_at"
-    t.text     "biographical_note",  limit: 65535
+    t.text     "biographical_note",  limit: 16777215
   end
 
   add_index "gaelic_athletes", ["slug"], name: "index_gaelic_athletes_on_slug", unique: true, using: :btree
@@ -150,9 +151,10 @@ ActiveRecord::Schema.define(version: 20150327191151) do
   create_table "series", force: :cascade do |t|
     t.string   "title",       limit: 255
     t.text     "description", limit: 65535
-    t.datetime "created_at",                null: false
-    t.datetime "updated_at",                null: false
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
     t.string   "slug",        limit: 255
+    t.text     "table",       limit: 4294967295
   end
 
   create_table "song_temp", force: :cascade do |t|
@@ -172,11 +174,11 @@ ActiveRecord::Schema.define(version: 20150327191151) do
   add_index "song_temp", ["slug"], name: "index_songs_on_slug", using: :btree
 
   create_table "songs", force: :cascade do |t|
-    t.text     "description",   limit: 65535
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
+    t.text     "description",   limit: 16777215
+    t.datetime "created_at",                     null: false
+    t.datetime "updated_at",                     null: false
     t.integer  "artist_id",     limit: 4
-    t.text     "embed",         limit: 65535
+    t.text     "embed",         limit: 16777215
     t.integer  "collection_id", limit: 4
     t.string   "slug",          limit: 255
     t.string   "refid",         limit: 255
@@ -185,6 +187,6 @@ ActiveRecord::Schema.define(version: 20150327191151) do
     t.string   "date",          limit: 255
   end
 
-  add_index "songs", ["slug"], name: "index_songs_on_slug", using: :btree
+  add_index "songs", ["slug"], name: "index_songs_on_slug", length: {"slug"=>191}, using: :btree
 
 end
