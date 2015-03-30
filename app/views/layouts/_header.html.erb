@@ -1,6 +1,5 @@
 <div class='header'>
-  <nav class="navbar navbar-default">
-   <div class="container-fluid">
+  <nav class="navbar navbar-default navbar-fixed-top">
     <div class="navbar-header">
       <%= link_to "MOLONEY COLLECTION", root_path, :class => "navbar-brand"  =%>
       <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
@@ -15,11 +14,10 @@
         <%= nav_link "ABOUT", about_path %>
         <%= nav_link "ARTISTS", artists_path %>
         <%= nav_link "GAELIC ATHLETES", gaelic_athletes_path %>
-        <%= nav_link "FINDING AID", "/finding-aid" %>
+        <%= nav_link "FINDING AIDS", finding_aids_path %>
         <%= nav_link "DOCUMENTS", documents_path %>
       </ul>
     </div><!-- /.navbar-collapse -->
-   </div><!-- /.container-fluid -->
   </nav>
 
   <% if current_page?('/') %>

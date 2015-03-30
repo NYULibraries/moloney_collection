@@ -1,5 +1,4 @@
 // Styles for logo and nav, check variables for bootstrap nav overrides 
-
 .header {
   margin: 0 auto;
   width: 95%;
@@ -9,7 +8,7 @@
     margin: 0 auto;
     width: 70%;
     max-width: 700px;
-    padding: 6% 0;
+    padding: 9% 0 10% 0;
     @media(max-width:$tablet) {
       width: 100%;
     }
@@ -20,37 +19,16 @@
   background-color: $dark-blue;
   border:0;
   border-radius: 0!important;
-  margin: 0;
+  margin: 0 auto;
+  width: 95%;
+  max-width:1200px;
+  
   .navbar-toggle {
     margin: 10px;
   }
-  .navbar-collapse.in {
-    overflow-y: visible;
-  }
-  &.navbar-nav {
-    width: 100%;
-    margin: 0 auto;
-    display: block;
-    li {
-      padding-left: 3px;
-      padding-right: 3px;
-      a {
-        color: $white;
-      }
-    }  
-    @media(min-width:$tablet) {
-      display: inline-block;
-      float: none;
-      vertical-align: top;
-    }
-  }
-  .navbar-collapse {
-    margin: 0 auto;
-    width: 100%;
-    z-index: 9999;
-    @media(min-width:$grid_float_breakpoint) {
-      text-align: center;
-    }
+
+  ul.nav {
+    float:right;
   }
 }
 

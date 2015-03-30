@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150327222633) do
+ActiveRecord::Schema.define(version: 20150330214452) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace",     limit: 255
@@ -107,19 +107,27 @@ ActiveRecord::Schema.define(version: 20150327222633) do
   add_index "documents", ["slug"], name: "index_documents_on_slug", using: :btree
 
   create_table "finding_aids", force: :cascade do |t|
-    t.string   "creator",         limit: 255
-    t.string   "title",           limit: 255
-    t.string   "dates_inclusive", limit: 255
-    t.string   "dates_bulk",      limit: 255
-    t.text     "abstract",        limit: 65535
-    t.text     "quantity",        limit: 65535
-    t.text     "location_note",   limit: 65535
-    t.string   "language",        limit: 255
-    t.string   "call_phrase",     limit: 255
-    t.datetime "created_at",                    null: false
-    t.datetime "updated_at",                    null: false
-    t.text     "header",          limit: 65535
+    t.string   "creator",                    limit: 255
+    t.string   "title",                      limit: 255
+    t.string   "dates_inclusive",            limit: 255
+    t.string   "dates_bulk",                 limit: 255
+    t.text     "abstract",                   limit: 65535
+    t.text     "quantity",                   limit: 65535
+    t.text     "location_note",              limit: 65535
+    t.string   "language",                   limit: 255
+    t.string   "call_phrase",                limit: 255
+    t.datetime "created_at",                               null: false
+    t.datetime "updated_at",                               null: false
+    t.text     "header",                     limit: 65535
+    t.string   "slug",                       limit: 255
+    t.text     "historical_note",            limit: 65535
+    t.text     "scope_note",                 limit: 65535
+    t.text     "access_points",              limit: 65535
+    t.text     "administrative_information", limit: 65535
+    t.text     "arrangement",                limit: 65535
   end
+
+  add_index "finding_aids", ["slug"], name: "index_finding_aids_on_slug", unique: true, using: :btree
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string   "slug",           limit: 255, null: false
@@ -149,12 +157,13 @@ ActiveRecord::Schema.define(version: 20150327222633) do
   add_index "gaelic_athletes", ["slug"], name: "index_gaelic_athletes_on_slug", unique: true, using: :btree
 
   create_table "series", force: :cascade do |t|
-    t.string   "title",       limit: 255
-    t.text     "description", limit: 65535
-    t.datetime "created_at",                     null: false
-    t.datetime "updated_at",                     null: false
-    t.string   "slug",        limit: 255
-    t.text     "table",       limit: 4294967295
+    t.string   "title",          limit: 255
+    t.text     "description",    limit: 65535
+    t.datetime "created_at",                        null: false
+    t.datetime "updated_at",                        null: false
+    t.string   "slug",           limit: 255
+    t.text     "table",          limit: 4294967295
+    t.integer  "finding_aid_id", limit: 4
   end
 
   create_table "song_temp", force: :cascade do |t|

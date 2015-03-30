@@ -1,5 +1,5 @@
 ActiveAdmin.register Series do
-  permit_params :title, :description, :table
+  permit_params :title, :description, :table, :finding_aid_id
   active_admin_import
 
   controller do
@@ -10,6 +10,7 @@ ActiveAdmin.register Series do
 
   index do
     column :title
+    column :finding_aid
     column "Description" do |series|
       truncate(series.description, omission: "...", length: 200, escape: false)
     end
@@ -19,8 +20,9 @@ ActiveAdmin.register Series do
     inputs 'Details' do
       input :title
       input :slug
+      input :finding_aid
       input :description, :as => :ckeditor
-      input :table, :as => :ckeditor
+      input :table, :as => :ckeditor, :hint => "Cut and paste html table, without scope note"
       li "Created at #{f.object.created_at}" unless f.object.new_record?
       actions
     end

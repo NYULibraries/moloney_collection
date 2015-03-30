@@ -5,6 +5,9 @@ class StaticPagesController < ApplicationController
     @song_list = @songs.group_by{ |s| s.artist }
   end
 
+  def rights_statement
+  end
+
   def contact 
   end
 

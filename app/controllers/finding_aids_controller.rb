@@ -1,7 +1,11 @@
 class FindingAidsController < InheritedResources::Base
-
   def index
-    @finding_aid = FindingAid.where(id: 1).first
+    @finding_aid = FindingAid.all().order(:title)
+  end
+
+  def show
+    @finding_aid = FindingAid.friendly.find(params[:id])
+    @series = Series.where(finding_aid_id: @finding_aid.id).order(:title)
   end
 
   private

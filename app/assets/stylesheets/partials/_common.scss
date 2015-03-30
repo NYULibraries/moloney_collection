@@ -2,11 +2,11 @@ html {
   background: $darkest-grey;
   background: url(asset-path("background.jpg")) no-repeat center center fixed;
   background-size: cover;
+  background-position: top;
   height: 100%;
-}
-
-body {
-  height:100%
+  body {
+    height:100%
+  }
 }
 
 img {
@@ -14,12 +14,12 @@ img {
 }
 
 .page_content {
-  position: relative;
   font-family: $base-font-family;
   margin: 0 auto;
   width: 95%;
   max-width: 1200px;
   background-color: $white;
+  margin-top: 30px;
 
   .container-fluid {
     padding: 2%;
@@ -42,6 +42,7 @@ img {
 .grey_section {
   background-color: $lightest-grey;
   border-top: 1px solid $light-grey;
+  border-bottom: 1px solid $light-grey;
   img {
     padding-bottom:10px;
   }

@@ -1,5 +1,9 @@
 .doc_col {
-  border-right: 1px solid $lightest-grey;
+  background-color: $lightest-grey;
+  
+  @media(min-width:$tablet) {
+    border-right: 1px solid $light-grey;
+  }
 }
 
 .doc_grid {

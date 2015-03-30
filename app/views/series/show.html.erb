@@ -1,14 +1,16 @@
-<p id="notice"><%= notice %></p>
+<!-- START SERIES --> 
+<div class='container-fluid'>
+  <div class='row'>
+    <div class='col-xs-12 finding_aid_table'>
+        <h5><%= @series.title %></h5>
+        <%= @series.table.html_safe %>
+    </div>
+  </div>
+</div>
 
-<p>
-  <strong>Title:</strong>
-  <%= @series.title %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @series.description %>
-</p>
-
-<%= link_to 'Edit', edit_series_path(@series) %> |
-<%= link_to 'Back', series_index_path %>
+<!-- child of the body tag -->
+<span id="top-link-block" class="hidden">
+    <a href="#top" class="well well-sm" onclick="$('html,body').animate({scrollTop:0},'slow');return false;">
+        <i class="glyphicon glyphicon-chevron-up"></i> Back to Top
+    </a>
+</span><!-- /top-link-block -->

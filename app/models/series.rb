@@ -1,5 +1,5 @@
 class Series < ActiveRecord::Base
-  #has_many :videos
+  belongs_to :finding_aid
   validates :title, :description, :presence => true
 
   extend FriendlyId

@@ -1,49 +1,58 @@
-<p id="notice"><%= notice %></p>
+<% provide(:title, "Finding Aid: " + @finding_aid.title) %>
+<div class='container-fluid'>
+  <h4><%= @finding_aid.title.upcase %></h4>
+  <div class='row'>
+    <div class='col-xxs col-xs-4 fa_menu'>
+      <h5>CONTENTS</h5>
+      <ul>
+        <li><%= icon('angle-right') %> <a href="#about">About</a></li>
+        <% @series.each do |s| %>
+          <li><%= icon('angle-right') %> <%= link_to s.title, series_path(s.slug) %></li>
+        <% end %>
+      </ul>
+    </div>
+    <div class='col-xxs col-xs-8 fa_header'>
+      <p>
+        <%= @finding_aid.header.html_safe %>
+      </p>
+    </div>
+  </div>
+</div>
 
-<p>
-  <strong>Creator:</strong>
-  <%= @finding_aid.creator %>
-</p>
+<!-- START ABOUT GREY -->
+<div class='container-fluid grey_section' id="about">
+  <div class='row'>
+    <div class='col-xs-12'>
+     <h6>ABOUT</h6>
+      <h5>DESCRIPTIVE SUMMARY</h5>
+      <table class='finding_aid_about'>
+        <tbody>
+          <% @finding_aid.attributes.except("id", "header", "created_at", "updated_at", "slug", "access_points", "scope_note", "historical_note", "arrangement", "administrative_information").each do |k,v| %>
+            <tr>
+              <td><%= k.humanize %></td>
+              <td><%= v.try(:html_safe) %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<!-- END ABOUT GREY -->
+<% @finding_aid.attributes.except("id", "header", "creator", "title", "dates_inclusive", "dates_bulk", "abstract", "quantity", "location_note", "language", "call_phrase", "created_at", "updated_at", "slug").each do |k,v| %>
+  <div class='container-fluid <%= cycle '', 'grey_section' %>'>
+    <div class='row'>
+      <div class='col-xs-12'>
+        <h5><%= k.humanize.upcase %></h5>
+        <p><%= v.try(:html_safe) %></p>
+      </div>
+    </div>
+ </div>
+<% end %>
 
-<p>
-  <strong>Title:</strong>
-  <%= @finding_aid.title %>
-</p>
-
-<p>
-  <strong>Dates inclusive:</strong>
-  <%= @finding_aid.dates_inclusive %>
-</p>
-
-<p>
-  <strong>Dates bulk:</strong>
-  <%= @finding_aid.dates_bulk %>
-</p>
-
-<p>
-  <strong>Abstract:</strong>
-  <%= @finding_aid.abstract %>
-</p>
-
-<p>
-  <strong>Quantity:</strong>
-  <%= @finding_aid.quantity %>
-</p>
-
-<p>
-  <strong>Location note:</strong>
-  <%= @finding_aid.location_note %>
-</p>
-
-<p>
-  <strong>Language:</strong>
-  <%= @finding_aid.language %>
-</p>
-
-<p>
-  <strong>Call phrase:</strong>
-  <%= @finding_aid.call_phrase %>
-</p>
-
-<%= link_to 'Edit', edit_finding_aid_path(@finding_aid) %> |
-<%= link_to 'Back', finding_aids_path %>
+<!-- child of the body tag -->
+<span id="top-link-block" class="hidden">
+    <a href="#top" class="well well-sm" onclick="$('html,body').animate({scrollTop:0},'slow');return false;">
+        <i class="glyphicon glyphicon-chevron-up"></i> Back to Top
+    </a>
+</span><!-- /top-link-block -->

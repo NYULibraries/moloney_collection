@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   #Static pages
   get "about" => "static_pages#about"
   get "contact" => "static_pages#contact" 
-  get "finding-aid" => "finding_aids#index"
+  get "rights-statement" => "static_pages#rights_statement"
   get "tamiment-library" => "static_pages#tamiment_library"
   get "song-rights" => "static_pages#song_rights"
 
