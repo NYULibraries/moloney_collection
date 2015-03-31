@@ -1,4 +1,12 @@
 GIT
+  remote: git://github.com/galetahub/ckeditor.git
+  revision: 0efddf9a46bbba4aeda562ec0ea77af738404418
+  specs:
+    ckeditor (4.1.1)
+      cocaine
+      orm_adapter (~> 0.5.0)
+
+GIT
   remote: git://github.com/gregbell/active_admin.git
   revision: 28e8a8f36640c64fc4163c86cc31d716862c5b37
   specs:
@@ -106,8 +114,6 @@ GEM
       xpath (~> 2.0)
     celluloid (0.16.0)
       timers (~> 4.0.0)
-    ckeditor_rails (4.4.6)
-      railties (>= 3.0)
     climate_control (0.0.3)
       activesupport (>= 3.0)
     cocaine (0.5.7)
@@ -371,7 +377,7 @@ DEPENDENCIES
   capistrano (~> 3.1.0)
   capistrano-rails
   capistrano-rvm
-  ckeditor_rails
+  ckeditor!
   database_cleaner
   delayed_job_active_record
   devise

@@ -6,7 +6,7 @@ gem 'activeadmin', :git => "git://github.com/gregbell/active_admin.git"
 gem "active_admin_import" , '2.1.2'
 gem "bootstrap-sass"
 gem "cancan"
-gem 'ckeditor_rails'
+gem 'ckeditor', github: 'galetahub/ckeditor'
 gem "delayed_job_active_record"
 gem "devise"
 gem "font-awesome-sass"
