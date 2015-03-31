@@ -8,7 +8,7 @@
       <ul>
         <li><%= icon('angle-right') %> <a href="#about">About</a></li>
         <% @series.each do |s| %>
-          <li><%= icon('angle-right') %> <%= link_to s.title, series_path(s.slug) %></li>
+          <li><%= icon('angle-right') %> <%= link_to s.title, anchor: "series_#{s.id}" %></li>
         <% end %>
       </ul>
     </div>
@@ -50,6 +50,8 @@
     </div>
  </div>
 <% end %>
+
+<%= render @series %>
 
 <!-- child of the body tag -->
 <span id="top-link-block" class="hidden">

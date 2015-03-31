@@ -1,6 +1,6 @@
 <!-- START SERIES --> 
 <div class='container-fluid'>
-  <h6><%= @series.finding_aid.title %></h6>
+  <h6><%= @series.finding_aid.title.upcase %></h6>
   <div class='row'>
     <div class='col-xs-12 finding_aid_table'>
         <h5><%= @series.title %></h5>
@@ -9,9 +9,3 @@
   </div>
 </div>
 
-<!-- child of the body tag -->
-<span id="top-link-block" class="hidden">
-    <a href="#top" class="well well-sm" onclick="$('html,body').animate({scrollTop:0},'slow');return false;">
-        <i class="glyphicon glyphicon-chevron-up"></i> Back to Top
-    </a>
-</span><!-- /top-link-block -->

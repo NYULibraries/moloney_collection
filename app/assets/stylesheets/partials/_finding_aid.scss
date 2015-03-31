@@ -42,6 +42,30 @@ table.finding_aid_about > tbody > tr > td {
   }
 }
 
+.finding_aid_table > table {
+  @extend .table;
+  @extend .table-bordered;
+  @extend .table-striped;
+  width: 100%;
+  td.container {
+    width: 0;
+    padding: 10px;
+  }
+
+  td:nth-child(1) {
+      width: 10%;}
+  td:nth-child(2) {
+      width: 10%;}
+  h4 {
+    font-size:1em;
+    font-weight: 100;
+    font-style: italic;
+    border:0;
+    padding:0;
+  }
+}
+
+
 #top-link-block.affix-top {
     position: absolute;
     bottom: -82px;

@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :finding_aids
 
-
+  mount Ckeditor::Engine => '/ckeditor'
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
 
