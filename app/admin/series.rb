@@ -21,12 +21,10 @@ ActiveAdmin.register Series do
       input :title
       input :slug
       input :finding_aid
-      input :description, :as => :ckeditor
-      input :table, :as => :ckeditor, :hint => "Cut and paste html table, without scope note"
+      input :description, input_html: {class: :ckeditor}
+      input :table, :class => ':ckeditor', :hint => "Cut and paste html table, without scope note"
       li "Created at #{f.object.created_at}" unless f.object.new_record?
       actions
     end
   end
-
-
 end
