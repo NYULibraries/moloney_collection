@@ -1,6 +1,6 @@
 class Series < ActiveRecord::Base
   belongs_to :finding_aid
-  validates :title, :description, :presence => true
+  validates :title, :table, :presence => true
 
   extend FriendlyId
   friendly_id :slug_candidates, use: :slugged

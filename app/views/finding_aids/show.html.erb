@@ -3,6 +3,7 @@
   <h4><%= @finding_aid.title.upcase %></h4>
   <div class='row'>
     <div class='col-xxs col-xs-4 fa_menu'>
+      <%= image_tag(@finding_aid.image, class: "fa_img") %>
       <h5>CONTENTS</h5>
       <ul>
         <li><%= icon('angle-right') %> <a href="#about">About</a></li>
@@ -27,7 +28,7 @@
       <h5>DESCRIPTIVE SUMMARY</h5>
       <table class='finding_aid_about'>
         <tbody>
-          <% @finding_aid.attributes.except("id", "header", "created_at", "updated_at", "slug", "access_points", "scope_note", "historical_note", "arrangement", "administrative_information").each do |k,v| %>
+          <% @finding_aid.attributes.except("id", "header", "created_at", "updated_at", "slug", "access_points", "scope_note", "historical_note", "arrangement", "administrative_information", "image_file_name", "image_updated_at", "image_content_type", "image_file_size").each do |k,v| %>
             <tr>
               <td><%= k.humanize %></td>
               <td><%= v.try(:html_safe) %></td>
@@ -39,7 +40,7 @@
   </div>
 </div>
 <!-- END ABOUT GREY -->
-<% @finding_aid.attributes.except("id", "header", "creator", "title", "dates_inclusive", "dates_bulk", "abstract", "quantity", "location_note", "language", "call_phrase", "created_at", "updated_at", "slug").each do |k,v| %>
+<% @finding_aid.attributes.except("id", "header", "creator", "title", "dates_inclusive", "dates_bulk", "abstract", "quantity", "location_note", "language", "call_phrase", "created_at", "updated_at", "slug", "image_file_name", "image_updated_at", "image_content_type", "image_file_size").each do |k,v| %>
   <div class='container-fluid <%= cycle '', 'grey_section' %>'>
     <div class='row'>
       <div class='col-xs-12'>
