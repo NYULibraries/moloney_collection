@@ -2,17 +2,18 @@ mysql2: &mysql2
   adapter: mysql2
   encoding: utf8
 
-development:
-  <<: *mysql2 
+development: &development
+  <<: *mysql2
   host:     <%= ENV['MOLONEY_DB_HOST']     %>
   database: <%= ENV['MOLONEY_DB_DATABASE'] %>
   username: <%= ENV['MOLONEY_DB_USER']     %>
   password: <%= ENV['MOLONEY_DB_PASSWORD'] %>
-  encoding: utf8
-  host: localhost
   min_messages: warning
   pool: 2
   timeout: 5000
+
+staging:
+  <<: *development
 
 test:
   <<: *mysql2

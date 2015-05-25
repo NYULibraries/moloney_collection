@@ -1,7 +1,5 @@
 source "https://rubygems.org"
 
-ruby "2.2.0"
-
 gem 'activeadmin', :git => "git://github.com/gregbell/active_admin.git"
 gem "active_admin_import" , '2.1.2'
 gem "bootstrap-sass"
@@ -17,6 +15,7 @@ gem 'paperclip'
 gem "rails", "4.2.0"
 gem "sass", "~> 3.4"
 gem "simple_form"
+gem 'therubyracer', platforms: :ruby
 gem "turbolinks"
 gem "uglifier"
 
