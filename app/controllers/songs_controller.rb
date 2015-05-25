@@ -1,4 +1,4 @@
-class SongsController < ApplicationController
+class SongsController < InheritedResources::Base
   before_action :set_song, only: [:show, :edit, :update, :destroy]
 
   # GET /songs
