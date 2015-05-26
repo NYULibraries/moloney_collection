@@ -1,4 +1,4 @@
-class CollectionsController < InheritedResources::Base
+class CollectionsController < ApplicationController
   def index
     redirect_to "/collections/1"
   end

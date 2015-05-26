@@ -1,4 +1,4 @@
-class SeriesController < InheritedResources::Base
+class SeriesController < ApplicationController
   def show
     @series = Series.friendly.find(params[:id])
   end

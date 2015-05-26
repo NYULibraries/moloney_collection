@@ -1,4 +1,4 @@
-class FindingAidsController < InheritedResources::Base
+class FindingAidsController < ApplicationController
   def index
     @finding_aid = FindingAid.all().order(:title)
   end

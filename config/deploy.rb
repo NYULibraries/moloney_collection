@@ -1,22 +1,20 @@
-# config valid only for Capistrano 3.1
-lock '3.1.0'
+require 'formaggio/capistrano'
+set :recipient, "web.services@library.nyu.edu"
+set :app_title, "moloney_collection"
+set :rvm_ruby_string, "2.1.3"
 
-set :application, 'moloney_collection'
-set :repo_url, 'git@github.com:greggparrish/moloney_collection.git'
-set :deploy_to, '/home/ubuntu/public/web/moloney'
-set :deploy_user, 'ubuntu'
-  
-set :rails_env, "deploy" 
-set :keep_releases, 5
-
+set :new_relic_environments, []
+after "deploy:assets:precompile", "deploy:public:copy_system"
 namespace :deploy do
-  desc 'Restart application'
-  task :restart do
-    on roles(:app), in: :sequence, wait: 5 do
-      execute :touch, release_path.join('tmp/restart.txt')
+  namespace :public do
+    desc "Moves over public/system files"
+    task :copy_system, :roles => :web, :max_hosts => 1, :except => { :no_release => true } do
+      logger.info ("Preparing to move over static public files....")
+      run_locally ("cd public && tar -jcf system.tar.bz2 system")
+      run         ("cd #{shared_path} && rm -rf system && mkdir system")
+      top.upload  "public/system.tar.bz2", "#{shared_path}", :via => :scp
+      run         ("cd #{shared_path} && tar -jxf system.tar.bz2 && rm system.tar.bz2")
+      run_locally ("rm public/system.tar.bz2")
     end
   end
-
-  after :finishing, 'deploy:cleanup'
-
 end

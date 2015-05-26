@@ -1,4 +1,4 @@
-class ArtistsController < InheritedResources::Base
+class ArtistsController < ApplicationController
   def index
     @artist_grid = Artist.order('name asc')
   end

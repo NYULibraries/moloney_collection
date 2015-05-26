@@ -1,4 +1,4 @@
-class StaticPagesController < InheritedResources::Base
+class StaticPagesController < ApplicationController
   def home 
     @doc_grid = Document.order('id DESC').limit(9)
     @songs = Song.order('id DESC').limit(7)

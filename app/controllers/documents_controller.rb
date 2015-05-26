@@ -1,4 +1,4 @@
-class DocumentsController < InheritedResources::Base
+class DocumentsController < ApplicationController
   def index
     @documents = Document.all
     @other_docs = Document.order("RAND()").limit(12)

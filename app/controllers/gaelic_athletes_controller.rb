@@ -1,4 +1,4 @@
-class GaelicAthletesController < InheritedResources::Base
+class GaelicAthletesController < ApplicationController
 
   def index
     @gaelic_grid = GaelicAthlete.order('name asc')
