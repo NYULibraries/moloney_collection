@@ -6,7 +6,7 @@ gem "bootstrap-sass"
 gem "cancan"
 gem 'ckeditor', github: 'galetahub/ckeditor'
 gem "delayed_job_active_record"
-gem "devise"
+gem "devise", '~> 3.5.10'
 gem "font-awesome-sass"
 gem 'friendly_id'
 gem "jquery-rails"
@@ -20,12 +20,9 @@ gem "turbolinks"
 gem "uglifier"
 
 ## NYU gems
-#gem 'formaggio', github: 'NYULibraries/formaggio'
+gem 'formaggio', github: 'NYULibraries/formaggio'
 
 group :development do
-  gem 'capistrano', '~> 3.1.0'
-  gem 'capistrano-rails'
-  gem 'capistrano-rvm'
   gem "populator"
   gem "web-console"
 end

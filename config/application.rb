@@ -1,6 +1,8 @@
 require File.expand_path('../boot', __FILE__)
-
+require 'figs'
 require 'rails/all'
+
+Figs.load(stage: Rails.env)
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
@@ -22,5 +24,7 @@ module MoloneyCollection
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+
+    routes.default_url_options[:script_name] = ENV['RAILS_RELATIVE_URL_ROOT'] if ENV['RAILS_RELATIVE_URL_ROOT']
   end
 end
