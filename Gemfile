@@ -22,6 +22,8 @@ gem "uglifier"
 ## NYU gems
 gem 'formaggio', github: 'NYULibraries/formaggio'
 
+gem 'nyulibraries_errors', github: 'NYULibraries/nyulibraries_errors', tag: 'v1.0.0'
+
 group :development do
   gem "populator"
   gem "web-console"
