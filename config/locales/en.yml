@@ -20,4 +20,6 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
+  nyulibraries_errors:
+    application_title: "Moloney Collection"
   hello: "Hello world"
