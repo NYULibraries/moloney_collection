@@ -12,7 +12,7 @@ gem 'friendly_id'
 gem "jquery-rails"
 gem "mysql2"
 gem 'paperclip'
-gem "rails", "4.2.0"
+gem "rails", "~> 4.2.0"
 gem "sass", "~> 3.4"
 gem "simple_form"
 gem 'therubyracer', platforms: :ruby
