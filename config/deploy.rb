@@ -1,5 +1,5 @@
 require 'formaggio/capistrano'
-set :recipient, "web.services@library.nyu.edu"
+set :recipient, "lib-webservices@nyu.edu"
 set :app_title, "moloney_collection"
 set :rvm_ruby_string, "2.2.6"
 
