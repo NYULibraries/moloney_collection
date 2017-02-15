@@ -1,22 +1,4 @@
 GIT
-  remote: git://github.com/gregbell/active_admin.git
-  revision: cef68b7be82699f9abdc46c98e4fa6a471cb1761
-  specs:
-    activeadmin (1.0.0.pre1)
-      arbre (~> 1.0, >= 1.0.2)
-      bourbon
-      coffee-rails
-      formtastic (~> 3.1)
-      formtastic_i18n
-      inherited_resources (~> 1.6)
-      jquery-rails
-      jquery-ui-rails (~> 5.0)
-      kaminari (~> 0.15)
-      rails (>= 3.2, < 5.0)
-      ransack (~> 1.3)
-      sass-rails
-
-GIT
   remote: https://github.com/NYULibraries/formaggio.git
   revision: 0cfcc78204097c44547d233a25162816d46344fd
   specs:
@@ -33,10 +15,10 @@ GIT
 
 GIT
   remote: https://github.com/NYULibraries/nyulibraries_errors.git
-  revision: c77c8c8a8699d5af7ceb2775fe6ac7aa81f6a5f5
-  tag: v1.0.0
+  revision: 16c7a14892e439c48e6fc1f8ce261c3cbe635e4c
+  tag: v1.0.1
   specs:
-    nyulibraries_errors (1.0.0)
+    nyulibraries_errors (1.0.1)
 
 GIT
   remote: https://github.com/galetahub/ckeditor.git
@@ -45,6 +27,25 @@ GIT
     ckeditor (4.2.2)
       cocaine
       orm_adapter (~> 0.5.0)
+
+GIT
+  remote: https://github.com/gregbell/active_admin.git
+  revision: 01db1a68bf1f224776df01befa64f9eb756af0b5
+  specs:
+    activeadmin (1.0.0.pre4)
+      arbre (~> 1.0, >= 1.0.2)
+      bourbon
+      coffee-rails
+      formtastic (~> 3.1)
+      formtastic_i18n
+      inherited_resources (~> 1.6)
+      jquery-rails
+      jquery-ui-rails
+      kaminari (>= 0.15, < 2.0)
+      railties (>= 3.2, < 5.1)
+      ransack (~> 1.3)
+      sass-rails
+      sprockets (< 4.1)
 
 GEM
   remote: https://rubygems.org/
@@ -92,7 +93,7 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.3.8)
     ansi (1.5.0)
-    arbre (1.0.3)
+    arbre (1.1.1)
       activesupport (>= 3.0.0)
     arel (6.0.3)
     autoprefixer-rails (5.1.11)
@@ -105,9 +106,9 @@ GEM
     bootstrap-sass (3.3.4.1)
       autoprefixer-rails (>= 5.0.0.1)
       sass (>= 3.2.19)
-    bourbon (4.2.3)
+    bourbon (4.3.2)
       sass (~> 3.4)
-      thor
+      thor (~> 0.19)
     builder (3.2.2)
     bundler-audit (0.3.1)
       bundler (~> 1.2)
@@ -179,9 +180,9 @@ GEM
     font-awesome-sass (4.3.2.1)
       sass (~> 3.2)
     formatador (0.2.5)
-    formtastic (3.1.3)
+    formtastic (3.1.4)
       actionpack (>= 3.2.13)
-    formtastic_i18n (0.4.1)
+    formtastic_i18n (0.6.0)
     formulaic (0.2.0)
       activesupport
       capybara
@@ -203,27 +204,36 @@ GEM
     guard-minitest (2.3.1)
       guard (~> 2.0)
       minitest (>= 3.0)
-    has_scope (0.6.0)
-      actionpack (>= 3.2, < 5)
-      activesupport (>= 3.2, < 5)
+    has_scope (0.7.0)
+      actionpack (>= 4.1, < 5.1)
+      activesupport (>= 4.1, < 5.1)
     highline (1.7.8)
     hitimes (1.2.2)
     i18n (0.7.0)
-    inherited_resources (1.6.0)
-      actionpack (>= 3.2, < 5)
-      has_scope (~> 0.6.0.rc)
-      railties (>= 3.2, < 5)
+    inherited_resources (1.7.0)
+      actionpack (>= 3.2, < 5.1)
+      has_scope (~> 0.6)
+      railties (>= 3.2, < 5.1)
       responders
     jquery-rails (4.0.3)
       rails-dom-testing (~> 1.0)
       railties (>= 4.2.0)
       thor (>= 0.14, < 2.0)
-    jquery-ui-rails (5.0.5)
+    jquery-ui-rails (6.0.1)
       railties (>= 3.2.16)
     json (1.8.3)
-    kaminari (0.16.3)
-      actionpack (>= 3.0.0)
-      activesupport (>= 3.0.0)
+    kaminari (1.0.1)
+      activesupport (>= 4.1.0)
+      kaminari-actionview (= 1.0.1)
+      kaminari-activerecord (= 1.0.1)
+      kaminari-core (= 1.0.1)
+    kaminari-actionview (1.0.1)
+      actionview
+      kaminari-core (= 1.0.1)
+    kaminari-activerecord (1.0.1)
+      activerecord
+      kaminari-core (= 1.0.1)
+    kaminari-core (1.0.1)
     libv8 (3.16.14.7)
     listen (2.10.0)
       celluloid (~> 0.16.0)
@@ -271,7 +281,7 @@ GEM
       cocaine (~> 0.5.3)
       mime-types
     pkg-config (1.1.7)
-    polyamorous (1.2.0)
+    polyamorous (1.3.1)
       activerecord (>= 3.0)
     populator (1.0.0)
     pry (0.10.1)
@@ -310,12 +320,12 @@ GEM
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
     rake (10.5.0)
-    ransack (1.6.6)
+    ransack (1.8.2)
       actionpack (>= 3.0)
       activerecord (>= 3.0)
       activesupport (>= 3.0)
       i18n
-      polyamorous (~> 1.2)
+      polyamorous (~> 1.3)
     rb-fsevent (0.9.5)
     rb-inotify (0.9.5)
       ffi (>= 0.5.0)
@@ -370,7 +380,7 @@ GEM
       ref
     thor (0.19.1)
     thread_safe (0.3.5)
-    tilt (2.0.5)
+    tilt (2.0.6)
     timecop (0.7.3)
     timers (4.0.1)
       hitimes
@@ -438,4 +448,4 @@ DEPENDENCIES
   webmock
 
 BUNDLED WITH
-   1.13.6
+   1.13.7
