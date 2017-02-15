@@ -1,7 +1,7 @@
 require 'formaggio/capistrano'
 set :recipient, "web.services@library.nyu.edu"
 set :app_title, "moloney_collection"
-set :rvm_ruby_string, "2.1.3"
+set :rvm_ruby_string, "2.2.6"
 
 set :new_relic_environments, []
 after "deploy:assets:precompile", "deploy:public:copy_system"
