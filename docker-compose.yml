@@ -1,0 +1,37 @@
+version: '3'
+services:
+
+  dev:
+    build: .
+    volumes:
+      - .:/app
+    ports:
+      - "3000:3000"
+    environment:
+      MOLONEY_DB_HOST: db
+      MOLONEY_DB_DATABASE: bravo
+      MOLONEY_DB_USER: root
+      MOLONEY_DB_PASSWORD:
+      RAILS_ENV: development
+    command: "tail -f /dev/null"
+    depends_on:
+      - setup_dbs
+
+  setup_dbs:
+    build: .
+    environment:
+      MOLONEY_DB_HOST: db
+      MOLONEY_DB_DATABASE: bravo
+      MOLONEY_DB_USER: root
+      MOLONEY_DB_PASSWORD:
+      RAILS_ENV: development
+    command: bash -c "sleep 5; rake db:setup"
+    depends_on:
+      - db
+
+  db:
+    image: library/mysql:5.6.22
+    expose:
+      - "3306"
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
