@@ -263,7 +263,7 @@ GEM
       builder
       minitest (>= 5.0)
       ruby-progressbar
-    mysql2 (0.5.2)
+    mysql2 (0.4.10)
     nenv (0.2.0)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
@@ -435,7 +435,7 @@ DEPENDENCIES
   jquery-rails (~> 4.0.3)
   mini_backtrace (= 0.1.3)
   minitest-reporters (= 1.0.5)
-  mysql2 (= 0.5.2)
+  mysql2 (= 0.4.10)
   nyulibraries_errors!
   paperclip (~> 5.3.0)
   populator

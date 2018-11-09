@@ -11,12 +11,14 @@ gem 'font-awesome-sass', '~> 4.3'
 gem 'friendly_id', '~> 5.1'
 gem 'jquery-rails', '~> 4.0.3'
 gem 'activerecord-mysql2-adapter', '0.0.3'
-gem 'mysql2', '0.5.2'
+gem 'mysql2', '0.4.10'
 gem 'paperclip', '~> 5.3.0'
 gem 'rails', '~> 4.2.0'
 gem 'sass', '~> 3.4'
 gem 'simple_form', '~> 3.1'
-gem 'therubyracer', platforms: :ruby
+group :no_docker do
+  gem 'therubyracer', platforms: :ruby
+end
 gem 'turbolinks', '~> 2.5.3'
 gem 'uglifier', '~> 2.7.1'
 # gem 'json', '1.8.6'

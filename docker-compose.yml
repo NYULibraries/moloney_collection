@@ -2,6 +2,7 @@ version: '3'
 services:
 
   dev:
+    image: moloney
     build: .
     volumes:
       - .:/app
@@ -12,20 +13,19 @@ services:
       MOLONEY_DB_DATABASE: bravo
       MOLONEY_DB_USER: root
       MOLONEY_DB_PASSWORD:
-      RAILS_ENV: development
-    command: "tail -f /dev/null"
+    command: ["bundle", "exec", "rails", "server", "-b", "0.0.0.0"]
     depends_on:
       - setup_dbs
 
   setup_dbs:
+    image: moloney
     build: .
     environment:
       MOLONEY_DB_HOST: db
       MOLONEY_DB_DATABASE: bravo
       MOLONEY_DB_USER: root
       MOLONEY_DB_PASSWORD:
-      RAILS_ENV: development
-    command: bash -c "sleep 5; rake db:setup"
+    command: sh -c "sleep 5; rake db:setup"
     depends_on:
       - db
 
