@@ -12,7 +12,7 @@ gem 'friendly_id', '~> 5.1'
 gem 'jquery-rails', '~> 4.0.3'
 gem 'mysql2', '0.4.10'
 gem 'paperclip', '~> 5.3.0'
-gem 'rails', '~> 4.2.0'
+gem 'rails', '~> 4.2.11.1'
 gem 'sass', '~> 3.4'
 gem 'simple_form', '~> 3.1'
 group :no_docker do
