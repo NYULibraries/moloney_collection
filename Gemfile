@@ -28,7 +28,7 @@ end
 
 ## NYU gems
 gem 'formaggio', github: 'NYULibraries/formaggio', tag: 'v1.7.2'
-gem 'nyulibraries_errors', github: 'NYULibraries/nyulibraries_errors', tag: 'v1.0.1'
+gem 'nyulibraries_errors', github: 'NYULibraries/nyulibraries_errors', tag: 'v1.1.1'
 
 group :development do
   # gem 'populator'
