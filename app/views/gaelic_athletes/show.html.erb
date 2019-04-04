@@ -3,7 +3,7 @@
   <h4>GAELIC ATHLETE: <%= @gaelic_athlete.name.upcase %></h4>
   <div class='row'>
     <div class='col-xxs col-xs-6 col-md-4'>
-      <%= image_tag(@gaelic_athlete.image, class: "gaelic_athlete_img") %>
+      <%= image_tag(@gaelic_athlete.image.url, class: "gaelic_athlete_img") %>
     </div>
     <div class='col-xxs col-xs-6 col-md-8'>
       <%= @gaelic_athlete.biographical_note.html_safe %>
