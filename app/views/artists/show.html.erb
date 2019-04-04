@@ -3,7 +3,7 @@
   <h4>ARTIST: <%= @artist.name.upcase %></h4>
   <div class='row'>
     <div class='col-xxs col-xs-6 col-md-4'>
-      <%= image_tag(@artist.image, class: "artist_img") %>
+      <%= image_tag(@artist.image.url, class: "artist_img") %>
     </div>
     <div class='col-xxs col-xs-6 col-md-8'>
       <%= @artist.biographical_note.html_safe %>
@@ -15,7 +15,7 @@
     <div class='col-xs-12'>
       <h4>RECORDINGS</h4>
       <table class='table table-striped table-bordered'>
-        <tr>   
+        <tr>
           <th>Description</th>
           <th>Duration</th>
           <th>AIAMM</th>

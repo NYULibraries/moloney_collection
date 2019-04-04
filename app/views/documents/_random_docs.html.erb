@@ -1,5 +1,5 @@
 <% @other_docs.each do |doc| %>
-  <div class='col-xs-3 col-md-2 doc_grid_item'> 
+  <div class='col-xs-3 col-md-2 doc_grid_item'>
     <%= link_to image_tag(doc.document_file(:small), class: "document_img"), document_path(doc.slug) %>
   </div>
 <% end %>

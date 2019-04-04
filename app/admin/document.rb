@@ -38,6 +38,6 @@ ActiveAdmin.register Document do
       li "Created at #{f.object.created_at}" unless f.object.new_record?
       actions
     end
-end  
+end
 
 end

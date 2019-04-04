@@ -9,7 +9,7 @@
         <% @song_list.each do |artist, songs| %>
           <div class='col-xs-12 col-sm-12 col-lg-12 songlist_wrapper'>
             <div class='songlist_img_wrapper'>
-              <%= link_to(image_tag(artist.image, class: "songlist_img"), artist_path(artist.slug)) %>
+              <%= link_to(image_tag(artist.image.url, class: "songlist_img"), artist_path(artist.slug)) %>
               <p><%= link_to(artist.name.upcase,  artist_path(artist.slug)) %></p>
             </div>
             <ul>

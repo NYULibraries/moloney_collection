@@ -1,16 +1,20 @@
-version: '3'
+version: '3.7'
 services:
 
   dev:
     image: moloney
     build: .
     volumes:
-      - .:/app
+      - ./:/app
+      # - ./config:/app/config
+      # - ./Gemfile:/app/Gemfile
+      # - ./Gemfile.lock:/app/Gemfile.lock
+      - bundle_cache:/bundle
     ports:
       - "3000:3000"
     environment:
       MOLONEY_DB_HOST: db
-      MOLONEY_DB_DATABASE: bravo
+      MOLONEY_DB_DATABASE: moloney
       MOLONEY_DB_USER: root
       MOLONEY_DB_PASSWORD:
     command: ["bundle", "exec", "rails", "server", "-b", "0.0.0.0"]
@@ -22,12 +26,14 @@ services:
     build: .
     environment:
       MOLONEY_DB_HOST: db
-      MOLONEY_DB_DATABASE: bravo
+      MOLONEY_DB_DATABASE: moloney
       MOLONEY_DB_USER: root
       MOLONEY_DB_PASSWORD:
     command: sh -c "sleep 5; rake db:setup"
     depends_on:
       - db
+    volumes:
+      - bundle_cache:/bundle
 
   db:
     image: library/mysql:5.6.22
@@ -35,3 +41,15 @@ services:
       - "3306"
     environment:
       MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+    volumes:
+    - ./moloney_dev.sql:/app/moloney_dev.sql
+
+    # WORKING WITH SQL DATA DUMPS LOCALLY:
+    # docker run -it library/mysql:5.6.22 bash
+    # mysqldump --user={username} -p --host={web.hostdomain.com} moloney > moloney_dev.sql
+    # docker cp {CONTAINER_ID}:/app/moloney_dev.sql moloney_dev.sql
+    # docker-compose up dev
+    # docker-compose exec db  bash -c 'mysql -uroot --host=db moloney < /app/moloney_dev.sql'
+
+volumes:
+  bundle_cache:

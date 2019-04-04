@@ -1,4 +1,4 @@
-class GaelicAthlete < ActiveRecord::Base
+class GaelicAthlete < ApplicationRecord
   has_many :songs
   validates :name, :biographical_note, :presence => true
   extend FriendlyId

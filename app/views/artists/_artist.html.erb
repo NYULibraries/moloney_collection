@@ -1,7 +1,7 @@
 <div class='col-xxs col-xs-12 col-md-6'>
   <div class='artist_grid_item'>
     <div class='col-xxs col-xs-4 col-lg-4 artist_grid_img'>
-      <%= link_to image_tag(artist.image, class: "artist_img"), artist_path(artist.slug) %>
+      <%= link_to image_tag(artist.image.url, class: "artist_img"), artist_path(artist.slug) %>
     </div>
     <div class='col-xxs col-xs-8 col-lg-8 artist_grid_text'>
       <h5><%= link_to artist.name.upcase, artist_path(artist.slug), :class => "artist_name" %></h5>

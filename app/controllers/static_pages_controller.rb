@@ -1,5 +1,5 @@
 class StaticPagesController < ApplicationController
-  def home 
+  def home
     @doc_grid = Document.order('id DESC').limit(9)
     @songs = Song.order('id DESC').limit(7)
     @song_list = @songs.group_by{ |s| s.artist }
@@ -8,7 +8,7 @@ class StaticPagesController < ApplicationController
   def rights_statement
   end
 
-  def contact 
+  def contact
   end
 
   def about
