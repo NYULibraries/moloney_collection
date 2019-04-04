@@ -16,10 +16,11 @@ GIT
 
 GIT
   remote: https://github.com/NYULibraries/nyulibraries_errors.git
-  revision: 16c7a14892e439c48e6fc1f8ce261c3cbe635e4c
-  tag: v1.0.1
+  revision: 54d8def9c219b2829a1b5284970e698fd4725cb7
+  tag: v1.1.1
   specs:
-    nyulibraries_errors (1.0.1)
+    nyulibraries_errors (1.1.1)
+      rails (>= 4)
 
 GIT
   remote: https://github.com/gregbell/active_admin.git
