@@ -10,7 +10,6 @@ gem 'active_admin_import' , '2.1.2'
 
 gem 'bootstrap-sass', '~> 3.3.4'
 gem 'cancan', '~> 1.6'
-gem 'ckeditor', github: 'galetahub/ckeditor'
 gem 'font-awesome-sass', '~> 4.3'
 gem 'friendly_id', '~> 5.1'
 gem 'jquery-rails', '~> 4.3.3'
@@ -37,9 +36,11 @@ group :development do
 end
 
 group :development, :test do
+  # Use Puma as the app server for testing and local development
+  gem 'puma', '~> 3.12'
+  gem 'byebug'
   # gem 'awesome_print'
   # gem 'bundler-audit', require: false
-  # gem 'byebug'
   # gem 'dotenv-rails'
   # gem 'factory_girl_rails'
   # gem 'pry-rails'

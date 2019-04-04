@@ -1,5 +1,5 @@
-require File.expand_path('../boot', __FILE__)
 require 'figs'
+require_relative 'boot'
 require 'rails/all'
 
 Figs.load(stage: Rails.env)
@@ -26,5 +26,8 @@ module MoloneyCollection
     config.active_record.raise_in_transactional_callbacks = true
 
     routes.default_url_options[:script_name] = ENV['RAILS_RELATIVE_URL_ROOT'] if ENV['RAILS_RELATIVE_URL_ROOT']
+
+    # Rails 5 options:
+    config.eager_load_paths << Rails.root.join('lib')
   end
 end

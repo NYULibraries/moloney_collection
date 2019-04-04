@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  mount Ckeditor::Engine => '/ckeditor'
+  # mount Ckeditor::Engine => '/ckeditor'
   # devise_for :admin_users, ActiveAdmin::Devise.config
   # ActiveAdmin.routes(self)
 
@@ -14,10 +14,10 @@ Rails.application.routes.draw do
   resources :songs, except: [:new, :create, :edit, :update, :destroy]
 
   #Static pages
+  # Currently undefined:
   get "about" => "static_pages#about"
   get "contact" => "static_pages#contact"
   get "rights-statement" => "static_pages#rights_statement"
   get "song-rights" => "static_pages#song_rights"
   get "tamiment-library" => "static_pages#tamiment_library"
-
 end

@@ -5,8 +5,10 @@ services:
     image: moloney
     build: .
     volumes:
-      # - ./app:/app/app
+      - ./:/app
       # - ./config:/app/config
+      # - ./Gemfile:/app/Gemfile
+      # - ./Gemfile.lock:/app/Gemfile.lock
       - bundle_cache:/bundle
     ports:
       - "3000:3000"
@@ -39,8 +41,8 @@ services:
       - "3306"
     environment:
       MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
-    # volumes:
-    # - ./moloney_dev.sql:/app/moloney_dev.sql
+    volumes:
+    - ./moloney_dev.sql:/app/moloney_dev.sql
 
     # WORKING WITH SQL DATA DUMPS LOCALLY:
     # docker run -it library/mysql:5.6.22 bash
