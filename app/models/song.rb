@@ -1,4 +1,4 @@
-class Song < ActiveRecord::Base
+class Song < ApplicationRecord
   belongs_to :artist
   belongs_to :collection
   validates :aiamm, :refid, :artist_id, :presence => true
