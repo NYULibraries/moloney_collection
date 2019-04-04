@@ -7,6 +7,8 @@ gem 'active_admin_import' , '2.1.2'
 # Disabled due to deprecation:
 # gem 'delayed_job_active_record', github: 'collectiveidea/delayed_job_active_record', tag: 'v4.1.3'
 # gem 'devise', '~> 3.5.10' () # must upgrade to be compatible with >= Ruby 2.5.0
+# gem 'simple_form', '~> 4'
+# gem 'turbolinks', '~> 2.5.4'
 
 gem 'bootstrap-sass', '~> 3.3.4'
 gem 'cancan', '~> 1.6'
@@ -18,8 +20,6 @@ gem 'paperclip', '~> 6'
 gem 'rails', '= 5.2.3'
 gem 'sass', '~> 3.4'
 gem 'sass-rails', '~> 5.0.7'
-gem 'simple_form', '~> 4'
-gem 'turbolinks', '~> 2.5.4'
 gem 'uglifier', '~> 2.7.1'
 
 group :no_docker do
@@ -38,8 +38,9 @@ group :development do
 end
 
 group :development, :test do
-  # Use Puma as the app server for testing and local development
+  # Use multi-threaded puma as the app server for testing and local development
   gem 'puma', '~> 3.12'
+  # byebug debugger
   gem 'byebug'
   # gem 'awesome_print'
   # gem 'bundler-audit', require: false

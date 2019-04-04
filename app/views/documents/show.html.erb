@@ -3,7 +3,7 @@
 <div class='container-fluid'>
   <div class='row grey_section'>
     <div class='col-xxs col-xs-6 col-md-6 pull-right doc_img'>
-      <%= image_tag(@document.document_file) %>
+      <%= image_tag(@document.document_file.url) %>
     </div>
     <div class='col-xxs col-xs-6 col-md-4 pull-left doc_desc'>
       <p><%= @document.description.html_safe %></p>
