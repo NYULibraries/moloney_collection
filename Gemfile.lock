@@ -284,8 +284,6 @@ GEM
     tilt (2.0.9)
     timers (4.0.1)
       hitimes
-    turbolinks (2.5.4)
-      coffee-rails
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
     uglifier (2.7.2)
@@ -319,7 +317,6 @@ DEPENDENCIES
   sass (~> 3.4)
   sass-rails (~> 5.0.7)
   therubyracer
-  turbolinks (~> 2.5.4)
   uglifier (~> 2.7.1)
 
 BUNDLED WITH
