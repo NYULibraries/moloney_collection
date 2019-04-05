@@ -10,9 +10,16 @@
   <%= stylesheet_link_tag 'application', 'https://fonts.googleapis.com/css?family=Roboto' %>
   <%= stylesheet_link_tag :application, media: "all" %>
   <%= csrf_meta_tags %>
-
 </head>
 <body>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-55461631-24"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-55461631-24');
+  </script>
   <%= render 'layouts/header' %>
   <div class='page_content'>
     <div class='page_wrap'>
