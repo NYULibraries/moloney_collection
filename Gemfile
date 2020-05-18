@@ -10,7 +10,7 @@ gem 'active_admin_import' , '2.1.2'
 # gem 'simple_form', '~> 4'
 # gem 'turbolinks', '~> 2.5.4'
 
-gem 'bootstrap-sass', '~> 3.3.4'
+gem 'bootstrap-sass', '~> 3.4.1'
 gem 'cancan', '~> 1.6'
 gem 'font-awesome-sass', '~> 4.3'
 gem 'friendly_id', '~> 5.1'
