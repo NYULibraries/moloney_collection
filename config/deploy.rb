@@ -7,6 +7,7 @@ require 'formaggio/capistrano/cache'
 require 'formaggio/capistrano/multistage'
 require 'formaggio/capistrano/rvm'
 require 'formaggio/capistrano/environment'
+require 'formaggio/capistrano/server/passenger'
 
 set :app_title, "moloney_collection"
 set :rvm_ruby_string, "2.6.2"
