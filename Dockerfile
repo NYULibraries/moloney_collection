@@ -1,33 +1,44 @@
-FROM ruby:2.6.2-alpine
+FROM ruby:2.6
 
-ENV DOCKER true
+# Env
 ENV INSTALL_PATH /app
-ARG PACKAGES="ca-certificates fontconfig mariadb-dev nodejs tzdata git ruby-dev build-base linux-headers mysql-dev python"
+ENV BUNDLE_PATH=/usr/local/bundle \
+    BUNDLE_BIN=/usr/local/bundle/bin \
+    GEM_HOME=/usr/local/bundle
+ENV PATH="${BUNDLE_BIN}:${PATH}"
+ENV USER docker
+ENV RUN_PACKAGES default-libmysqlclient-dev git nodejs ruby-mysql2
+ENV BUILD_PACKAGES build-essential zlib1g-dev
 
-RUN apk add --no-cache --update $PACKAGES
-
-# Prepare bundle caching directory
-RUN mkdir -p /bundle && chown 1000:2000 /bundle
-
-# Add bundle entry point to handle bundle cache
-COPY ./docker-entrypoint.sh /
-RUN chmod +x /docker-entrypoint.sh
-ENTRYPOINT ["/docker-entrypoint.sh"]
-
-RUN addgroup -g 1000 -S docker && \
-  adduser -u 1000 -S -G docker docker
-USER docker
+RUN groupadd -g 2000 docker -r && \
+    useradd -u 1000 -r --no-log-init -m -d $INSTALL_PATH -g docker docker
 
 WORKDIR $INSTALL_PATH
 
-# Copy source into container
-COPY --chown=docker:docker . .
+# install wait-for-it script
+RUN wget -q -O - https://raw.githubusercontent.com/vishnubob/wait-for-it/master/wait-for-it.sh > /tmp/wait-for-it.sh \
+  && chmod a+x /tmp/wait-for-it.sh \
+  && chown -R docker:docker /tmp/wait-for-it.sh 
 
-ENV BUNDLE_PATH=/bundle \
-  BUNDLE_BIN=/bundle/bin \
-  GEM_HOME=/bundle
-ENV PATH="${BUNDLE_BIN}:${PATH}"
-RUN gem install bundler -v 2.0.1
+# Bundle install
+COPY Gemfile Gemfile.lock ./
+RUN apt-get update && apt-get -y --no-install-recommends install $BUILD_PACKAGES $RUN_PACKAGES \
+  && gem install bundler -v '2.2.3' \
+  && bundle config --local github.https true \
+  && bundle config set without 'no_docker' \
+  && bundle install --jobs 20 --retry 5 \
+  && rm -rf /root/.bundle && rm -rf /root/.gem \
+  && rm -rf /usr/local/bundle/cache \
+  && apt-get --purge -y autoremove $BUILD_PACKAGES \
+  && apt-get clean && rm -rf /var/lib/apt/lists/* \
+  && chown -R docker:docker /usr/local/bundle
+
+USER $USER
+
+# avoid ssh key verification failures on runtime
+RUN mkdir ~/.ssh && touch ~/.ssh/known_hosts && ssh-keyscan github.com >> ~/.ssh/known_hosts
+
+COPY --chown=docker:docker . .
 
 EXPOSE 3000
 
