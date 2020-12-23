@@ -7,8 +7,8 @@ ENV BUNDLE_PATH=/usr/local/bundle \
     GEM_HOME=/usr/local/bundle
 ENV PATH="${BUNDLE_BIN}:${PATH}"
 ENV USER docker
-ENV RUN_PACKAGES default-libmysqlclient-dev git nodejs ruby-mysql2
-ENV BUILD_PACKAGES build-essential zlib1g-dev
+ENV RUN_PACKAGES default-libmysqlclient-dev git nodejs ruby-mysql2 zlib1g-dev
+ENV BUILD_PACKAGES build-essential
 
 RUN groupadd -g 2000 docker -r && \
     useradd -u 1000 -r --no-log-init -m -d $INSTALL_PATH -g docker docker
