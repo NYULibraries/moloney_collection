@@ -43,18 +43,18 @@ jobs:
     steps:
       - setup_remote_docker
       - run:
-          name: Deploy into QA via Jenkins
+          name: Deploy into Staging via Jenkins
           command: |
-            docker run --rm appropriate/curl -u $JENKINS_CI_USERNAME:$JENKINS_CI_API_KEY -X POST https://jenkinsci.library.nyu.edu/job/Moloney%20Collection%20Deploy/buildWithParameters\?GIT_COMMIT\=$CIRCLE_SHA1\&DEPLOY_ENV\=staging
+            docker run --rm appropriate/curl -f -u $JENKINS_CI_USERNAME:$JENKINS_CI_API_KEY -X POST https://jenkinsci.library.nyu.edu/job/Moloney%20Collection%20Deploy/buildWithParameters\?GIT_COMMIT\=$CIRCLE_SHA1\&DEPLOY_ENV\=staging
 
   deploy-prod:
     <<: *docker-defaults
     steps:
       - setup_remote_docker
       - run:
-          name: Deploy into production via Jenkins
+          name: Deploy into Production via Jenkins
           command: |
-            docker run --rm appropriate/curl -u $JENKINS_CI_USERNAME:$JENKINS_CI_API_KEY -X POST https://jenkinsci.library.nyu.edu/job/Moloney%20Collection%20Deploy/buildWithParameters\?GIT_COMMIT\=$CIRCLE_SHA1\&DEPLOY_ENV\=production
+            docker run --rm appropriate/curl -f -u $JENKINS_CI_USERNAME:$JENKINS_CI_API_KEY -X POST https://jenkinsci.library.nyu.edu/job/Moloney%20Collection%20Deploy/buildWithParameters\?GIT_COMMIT\=$CIRCLE_SHA1\&DEPLOY_ENV\=production
 
 workflows:
   version: 2
