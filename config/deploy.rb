@@ -1,4 +1,10 @@
 require 'formaggio/capistrano'
+require 'formaggio/capistrano/assets'
+require 'formaggio/capistrano/bundler'
+require 'formaggio/capistrano/cache'
+require 'formaggio/capistrano/multistage'
+require 'formaggio/capistrano/rvm'
+
 set :app_title, "moloney_collection"
 set :rvm_ruby_string, "2.6.2"
 set :new_relic_environments, ["none"]
