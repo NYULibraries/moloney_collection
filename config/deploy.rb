@@ -1,4 +1,3 @@
-require 'formaggio/capistrano'
 require 'formaggio/capistrano/assets'
 require 'formaggio/capistrano/bundler'
 require 'formaggio/capistrano/cache'
