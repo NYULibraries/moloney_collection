@@ -4,6 +4,9 @@ source 'https://rubygems.org'
 gem 'activeadmin', github: 'gregbell/active_admin', tag: 'v1.4.3'
 gem 'active_admin_import' , '2.1.2'
 
+# Update rake after we're off formaggio/figs
+# gem 'rake', '~> 12.3.3'
+
 # Disabled due to deprecation:
 # gem 'delayed_job_active_record', github: 'collectiveidea/delayed_job_active_record', tag: 'v4.1.3'
 # gem 'devise', '~> 3.5.10' () # must upgrade to be compatible with >= Ruby 2.5.0
