@@ -3,6 +3,7 @@ set :app_title, "moloney_collection"
 set :rvm_ruby_string, "2.6.2"
 set :new_relic_environments, ["none"]
 set :scm, :git
+set(:branch, (ENV["GIT_COMMIT"] || ENV["GIT_BRANCH"]).gsub(/remotes\//,"").gsub(/origin\//,""))
 
 after "deploy:assets:precompile", "deploy:public:copy_system"
 namespace :deploy do
