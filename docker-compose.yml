@@ -19,6 +19,8 @@ x-dev-env: &dev-env
     MOLONEY_DB_DATABASE: moloney
     MOLONEY_DB_USER: root
     MOLONEY_DB_PASSWORD:
+    GIT_COMMIT:
+    DEPLOY_ENV:
 
 services:
   dev:
@@ -46,7 +48,7 @@ services:
     environment:
       MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
     volumes:
-    - ${PWD}/moloney_dev.sql:/app/moloney_dev.sql
+    - ./moloney_dev.sql:/app/moloney_dev.sql
 
     # WORKING WITH SQL DATA DUMPS LOCALLY:
     # docker run -it library/mysql:5.6.22 bash
