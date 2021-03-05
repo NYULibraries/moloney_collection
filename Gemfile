@@ -5,7 +5,7 @@ gem 'activeadmin', github: 'gregbell/active_admin', tag: 'v1.4.3'
 gem 'active_admin_import' , '2.1.2'
 
 # Update rake after we're off formaggio/figs
-# gem 'rake', '~> 12.3.3'
+gem 'rake', '~> 12.3.3'
 
 # Disabled due to deprecation:
 # gem 'delayed_job_active_record', github: 'collectiveidea/delayed_job_active_record', tag: 'v4.1.3'
@@ -30,7 +30,6 @@ group :no_docker do
 end
 
 ## NYU gems
-gem 'formaggio', github: 'NYULibraries/formaggio', tag: 'v1.7.2'
 gem 'nyulibraries_errors', github: 'NYULibraries/nyulibraries_errors', tag: 'v1.1.1'
 
 group :development do
