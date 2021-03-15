@@ -53,21 +53,24 @@ jobs:
   deploy-dev:
     <<: *docker-defaults
     steps:
+      - checkout
       - setup_remote_docker
       - run:
           name: Deploy into Staging via Jenkins
           command: |
-            docker run --rm appropriate/curl -f -u $JENKINS_CI_USERNAME:$JENKINS_CI_API_KEY -X POST https://jenkinsci.library.nyu.edu/job/Moloney%20Collection%20Deploy/buildWithParameters\?GIT_COMMIT\=$CIRCLE_SHA1\&DEPLOY_ENV\=staging
-            timeout 5m sh -c 'result="no"; until [ result = "SUCCESS" ]; do sleep 5; result = `docker run --rm appropriate/curl -f -u $JENKINS_CI_USERNAME:$JENKINS_CI_API_KEY https://jenkinsci.library.nyu.edu/job/Moloney%20Collection%20Deploy/lastBuild/api/json | jq .result`; done'
+            #docker run --rm appropriate/curl -f -u $JENKINS_CI_USERNAME:$JENKINS_CI_API_KEY -X POST https://jenkinsci.library.nyu.edu/job/Moloney%20Collection%20Deploy/buildWithParameters\?GIT_COMMIT\=$CIRCLE_SHA1\&DEPLOY_ENV\=staging
+            DEPLOY_ENV=staging script/deploy.sh
 
   deploy-prod:
     <<: *docker-defaults
     steps:
+      - checkout
       - setup_remote_docker
       - run:
           name: Deploy into Production via Jenkins
           command: |
-            docker run --rm appropriate/curl -f -u $JENKINS_CI_USERNAME:$JENKINS_CI_API_KEY -X POST https://jenkinsci.library.nyu.edu/job/Moloney%20Collection%20Deploy/buildWithParameters\?GIT_COMMIT\=$CIRCLE_SHA1\&DEPLOY_ENV\=production
+            #docker run --rm appropriate/curl -f -u $JENKINS_CI_USERNAME:$JENKINS_CI_API_KEY -X POST https://jenkinsci.library.nyu.edu/job/Moloney%20Collection%20Deploy/buildWithParameters\?GIT_COMMIT\=$CIRCLE_SHA1\&DEPLOY_ENV\=production
+            DEPLOY_ENV=production script/deploy.sh
 
 workflows:
   version: 2
