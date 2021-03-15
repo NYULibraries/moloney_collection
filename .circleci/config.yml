@@ -1,6 +1,6 @@
 docker-defaults: &docker-defaults
   docker:
-    - image: nyulibraries/circleci_docker:18.06.1-ce-git-compose-1.22.0
+    - image: nyulibraries/circleci_docker:chore_update-e1f90695de6a3c1230302a7d7444ef6e33299f9c
       environment:
         - IMAGE_NAME=moloney_collection
         - COMPOSE_PROJECT_NAME=moloney_collection
@@ -58,6 +58,7 @@ jobs:
           name: Deploy into Staging via Jenkins
           command: |
             docker run --rm appropriate/curl -f -u $JENKINS_CI_USERNAME:$JENKINS_CI_API_KEY -X POST https://jenkinsci.library.nyu.edu/job/Moloney%20Collection%20Deploy/buildWithParameters\?GIT_COMMIT\=$CIRCLE_SHA1\&DEPLOY_ENV\=staging
+            timeout 5m sh -c 'result="no"; until [ result = "SUCCESS" ]; do sleep 5; result = `curl -f -u $JENKINS_CI_USERNAME:$JENKINS_CI_API_KEY https://jenkinsci.library.nyu.edu/job/Moloney%20Collection%20Deploy/lastBuild/api/json | jq .result`; done'
 
   deploy-prod:
     <<: *docker-defaults
