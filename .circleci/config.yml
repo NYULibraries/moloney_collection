@@ -59,7 +59,7 @@ jobs:
           name: Deploy into Staging via Jenkins
           command: |
             #docker run --rm appropriate/curl -f -u $JENKINS_CI_USERNAME:$JENKINS_CI_API_KEY -X POST https://jenkinsci.library.nyu.edu/job/Moloney%20Collection%20Deploy/buildWithParameters\?GIT_COMMIT\=$CIRCLE_SHA1\&DEPLOY_ENV\=staging
-            DEPLOY_ENV=staging script/deploy.sh
+            DEPLOY_ENV=staging script/jenkins_deploy.sh
 
   deploy-prod:
     <<: *docker-defaults
@@ -70,7 +70,7 @@ jobs:
           name: Deploy into Production via Jenkins
           command: |
             #docker run --rm appropriate/curl -f -u $JENKINS_CI_USERNAME:$JENKINS_CI_API_KEY -X POST https://jenkinsci.library.nyu.edu/job/Moloney%20Collection%20Deploy/buildWithParameters\?GIT_COMMIT\=$CIRCLE_SHA1\&DEPLOY_ENV\=production
-            DEPLOY_ENV=production script/deploy.sh
+            DEPLOY_ENV=production script/jenkins_deploy.sh
 
 workflows:
   version: 2
