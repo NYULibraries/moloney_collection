@@ -1,6 +1,6 @@
 docker-defaults: &docker-defaults
   docker:
-    - image: nyulibraries/circleci_docker:chore_update-e1f90695de6a3c1230302a7d7444ef6e33299f9c
+    - image: quay.io/nyulibraries/circleci_docker:chore_update-e1f90695de6a3c1230302a7d7444ef6e33299f9c
       environment:
         - IMAGE_NAME=moloney_collection
         - COMPOSE_PROJECT_NAME=moloney_collection
