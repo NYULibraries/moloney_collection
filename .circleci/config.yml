@@ -57,7 +57,7 @@ jobs:
       - run:
           name: Deploy into Staging via Jenkins
           command: |
-            docker run --rm -e JOB_NAME=Moloney%20Collection%20Deploy -e DEPLOY_ENV=staging -e TIMEOUT=3m -e JENKINS_CI_HOST=jenkinsci.library.nyu.edu -e JENKINS_CI_USERNAME -e JENKINS_CI_API_KEY -e CIRCLE_SHA1 quay.io/nyulibraries/jenkins_build
+            docker run --rm -e JOB_NAME=Moloney%20Collection%20Deploy -e DEPLOY_ENV=staging -e TIMEOUT=4m -e JENKINS_CI_HOST=jenkinsci.library.nyu.edu -e JENKINS_CI_USERNAME -e JENKINS_CI_API_KEY -e CIRCLE_SHA1 quay.io/nyulibraries/jenkins_build
 
   deploy-prod:
     <<: *docker-defaults
@@ -66,7 +66,7 @@ jobs:
       - run:
           name: Deploy into Production via Jenkins
           command: |
-            docker run --rm -e JOB_NAME=Moloney%20Collection%20Deploy -e DEPLOY_ENV=production -e TIMEOUT=3m -e JENKINS_CI_HOST=jenkinsci.library.nyu.edu -e JENKINS_CI_USERNAME -e JENKINS_CI_API_KEY -e CIRCLE_SHA1 quay.io/nyulibraries/jenkins_build
+            docker run --rm -e JOB_NAME=Moloney%20Collection%20Deploy -e DEPLOY_ENV=production -e TIMEOUT=4m -e JENKINS_CI_HOST=jenkinsci.library.nyu.edu -e JENKINS_CI_USERNAME -e JENKINS_CI_API_KEY -e CIRCLE_SHA1 quay.io/nyulibraries/jenkins_build
 
 workflows:
   version: 2
