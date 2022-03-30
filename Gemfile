@@ -42,7 +42,7 @@ end
 
 group :development, :test do
   # Use multi-threaded puma as the app server for testing and local development
-  gem 'puma', '~> 3.12'
+  gem 'puma', '~> 4.3'
   # byebug debugger
   gem 'byebug'
   # gem 'awesome_print'
